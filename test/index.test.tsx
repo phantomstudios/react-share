@@ -31,7 +31,7 @@ describe("<SharingHeadEmbed />", () => {
 
 describe("shareUrls.ts", () => {
   it("getTwitterUrl()", async () => {
-    const url = getTwitterUrl(URL, TEXT);
+    const url = getTwitterUrl({ url: URL, text: TEXT });
     // expect(url).toEqual(...);
   });
 });

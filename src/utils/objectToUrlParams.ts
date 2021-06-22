@@ -1,4 +1,6 @@
-import { UrlDataProps } from "../types";
+interface UrlDataProps {
+  [key: string]: string | number | undefined | null;
+}
 
 export default function objectToUrlParams(data: UrlDataProps) {
   const params = Object.entries(data)

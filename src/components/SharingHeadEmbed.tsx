@@ -1,6 +1,13 @@
 import React from "react";
 
-import { MetaEmbedProps } from "../types";
+export interface MetaEmbedProps {
+  title?: string;
+  description?: string;
+  keywords?: string | string[];
+  canonicalUrl?: string;
+  imageUrl?: string;
+  includeTwitter?: boolean;
+}
 
 const SharingHeadEmbed = ({
   title,
