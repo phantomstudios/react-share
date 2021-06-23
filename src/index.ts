@@ -11,3 +11,4 @@ export {
   default as getFacebookUrl,
   FacebookProps,
 } from "./utils/getFacebookUrl";
+export { SocialPlatforms } from "./types";

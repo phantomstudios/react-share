@@ -26,10 +26,10 @@ npm i @phntms/react-share
 | ------------------ | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **title**          | string               | App title. This will be shown whenever someone links your website, so make it quick, snappy and able to draw attention.                                                                 |
 | **description**    | string               | A one to two sentence description of your webpage.description.                                                                                                                          |
-| **keywords**       | string&#124;string[] | ?                                                                                                                                                                                       |
+| **keywords**       | string&#124;string[] | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                              |
 | **canonicalUrl**   | string               | The canonical URL of your webpage that will be used as its default app URL. app.                                                                                                        |
 | **imageUrl**       | string               | URL for app image. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/). |
-| **includeTwitter** | boolean              | If Twitter meta properties will be included, defaults to `false`.                                                                                                                       |
+| **excludeTwitter** | boolean              | If Twitter meta properties will be excluded, defaults to `false` and includes them if left unchanged.                                                                                   |
 
 To add all page meta properties, add `SharingHeadEmbed` to the `head` of the page.
 
@@ -39,18 +39,16 @@ Example usage in Next.js:
 import { SharingHeadEmbed } from "@phntms/react-share";
 import type { AppProps } from "next/app";
 
-const META: MetaEmbedProps = {
-  title: "@phntms/react-share",
-  description: "all-in-one",
-  keywords: ["metadata", "share", "social-media", "sharing", "opengraph"],
-  canonicalUrl: "https://www.npmjs.com/package/@phntms/react-share";
-  imageUrl: "?",
-};
-
 const App = ({ Component }: AppProps) => (
   <>
     <Head>
-      <SharingHeadEmbed {...META} includeTwitter />
+      <SharingHeadEmbed
+        url="@phntms/react-share"
+        description="all-in-one"
+        keywords={["metadata", "share", "social-media", "sharing", "opengraph"]}
+        canonicalUrl="https://www.npmjs.com/package/@phntms/react-share"
+        imageUrl="?"
+        />
     </Head>
     <Component />
   </>
@@ -60,6 +58,33 @@ export default App;
 ```
 
 **Note**: `imageUrl` and `canonicalUrl` must start with `https://`, else they won't work.
+
+### getShareUrl()
+
+Includes props from every social platform.
+
+```jsx
+import { getShareUrl } from "@phntms/react-share";
+
+const Share = () => (
+  <a
+    href={getShareUrl(SocialPlatforms.Twitter, {
+      url: "https://www.npmjs.com/package/@phntms/react-share",
+    })}
+  >
+    Share to Twitter
+  </a>
+  <a
+    href={getShareUrl(SocialPlatforms.Facebook, {
+      url: "https://www.npmjs.com/package/@phntms/react-share",
+    })}
+  >
+    Share to Facebook
+  </a>
+);
+
+export default Share;
+```
 
 ### getTwitterUrl()
 
@@ -76,7 +101,11 @@ Basic component example usage:
 import { getTwitterUrl } from "@phntms/react-share";
 
 const ShareToTwitter = () => (
-  <a href={getTwitterUrl("https://www.npmjs.com/package/@phntms/react-share")}>
+  <a
+    href={getTwitterUrl({
+      url: "https://www.npmjs.com/package/@phntms/react-share",
+    })}
+  >
     Share to Twitter
   </a>
 );
