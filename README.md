@@ -22,16 +22,16 @@ npm i @phntms/react-share
 
 ### &lt;SharingHeadEmbed />
 
-| Property           | Type                 | Required | Notes                                                                                                                                                                                              |
-| ------------------ | -------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **pageTitle**      | string               | **Yes**  | Title of page user is currently on, such as 'Home', 'Contact Us'.                                                                                                                                  |
-| **siteTitle**      | string               | **Yes**  | Site wide title. This will be shown whenever someone links your website, so make it quick, snappy and able to draw attention.                                                                      |
-| **titleTemplate**  | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, takes the corresponding values, `[PAGE_TITLE]` and `[SITE_TITLE]`. Example template: "[PAGE_TITLE] &#124; [SITE_TITLE]". |
-| **description**    | string               | **Yes**  | A one to two sentence description of your webpage.description.                                                                                                                                     |
-| **keywords**       | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                         |
-| **canonicalUrl**   | string               | **Yes**  | The canonical URL of your webpage that will be used as its default app URL. app.                                                                                                                   |
-| **imageUrl**       | string               | **Yes**  | URL for app image. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).            |
-| **excludeTwitter** | boolean              | **No**   | If Twitter meta properties will be excluded, defaults to `false`, but includes if left unchanged.                                                                                                  |
+| Property           | Type                 | Required | Notes                                                                                                                                                                                                      |
+| ------------------ | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **pageTitle**      | string               | **Yes**  | Title of page user is currently on, such as 'Home', 'Contact Us'.                                                                                                                                          |
+| **siteTitle**      | string               | **Yes**  | Site wide title. This will be shown whenever someone links your website, so make it quick, snappy and able to draw attention.                                                                              |
+| **titleTemplate**  | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[PAGE_TITLE]` and `[SITE_TITLE]`. Example template: "[PAGE_TITLE] &#124; [SITE_TITLE]". |
+| **description**    | string               | **Yes**  | A one to two sentence description of your webpage.description.                                                                                                                                             |
+| **keywords**       | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                                 |
+| **canonicalUrl**   | string               | **Yes**  | The canonical URL of your webpage that will be used as its default app URL. app.                                                                                                                           |
+| **imageUrl**       | string               | **Yes**  | URL for app image. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).                    |
+| **excludeTwitter** | boolean              | **No**   | If Twitter meta properties will be excluded, defaults to `false`, but includes if left unchanged.                                                                                                          |
 
 To add all page meta properties, add `SharingHeadEmbed` to the `head` of the page.
 
