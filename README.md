@@ -63,6 +63,59 @@ export default App;
 
 **Note**: `imageUrl` and `canonicalUrl` must start with `https://`, else they won't work.
 
+### getFacebookUrl()
+
+| Parameter | Type   | Required | Notes                            |
+| --------- | ------ | -------- | -------------------------------- |
+| url       | string | **Yes**  | URL of shared webpage.           |
+| quote     | string | **No**   | Quote to show in Facebook card.  |
+| hashtag   | string | **No**   | Hashtag to show in Facebook card |
+
+Basic component example usage:
+
+```jsx
+import { getFacebookUrl } from "@phntms/react-share";
+
+const ShareToFacebook = () => (
+  <a
+    href={getFacebookUrl({
+      url: "https://www.npmjs.com/package/@phntms/react-share",
+    })}
+  >
+    Share to Facebook
+  </a>
+);
+
+export default ShareToFacebook;
+```
+
+### getLinkedinUrl()
+
+| Parameter | Type   | Required | Notes                                                                    |
+| --------- | ------ | -------- | ------------------------------------------------------------------------ |
+| url       | string | **Yes**  | URL of shared webpage.                                                   |
+| title     | string | **No**   | Title to show in card.                                                   |
+| summary   | string | **No**   | Description to show in card                                              |
+| source    | string | **No**   | Source of the content (for example... your website or application name). |
+
+Basic component example usage:
+
+```jsx
+import { getLinkedinUrl } from "@phntms/react-share";
+
+const ShareToLinkedin = () => (
+  <a
+    href={getLinkedinUrl({
+      url: "https://www.npmjs.com/package/@phntms/react-share",
+    })}
+  >
+    Share to Linkedin
+  </a>
+);
+
+export default ShareToLinkedin;
+```
+
 ### getTwitterUrl()
 
 | Parameter | Type   | Required | Notes                            |
