@@ -22,14 +22,16 @@ npm i @phntms/react-share
 
 ### &lt;SharingHeadEmbed />
 
-| Property           | Type                 | Notes                                                                                                                                                                                   |
-| ------------------ | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **title**          | string               | App title. This will be shown whenever someone links your website, so make it quick, snappy and able to draw attention.                                                                 |
-| **description**    | string               | A one to two sentence description of your webpage.description.                                                                                                                          |
-| **keywords**       | string&#124;string[] | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                              |
-| **canonicalUrl**   | string               | The canonical URL of your webpage that will be used as its default app URL. app.                                                                                                        |
-| **imageUrl**       | string               | URL for app image. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/). |
-| **excludeTwitter** | boolean              | If Twitter meta properties will be excluded, defaults to `false` and includes them if left unchanged.                                                                                   |
+| Property           | Type                 | Required | Notes                                                                                                                                                                                              |
+| ------------------ | -------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **pageTitle**      | string               | **Yes**  | Title of page user is currently on, such as 'Home', 'Contact Us'.                                                                                                                                  |
+| **siteTitle**      | string               | **Yes**  | Site wide title. This will be shown whenever someone links your website, so make it quick, snappy and able to draw attention.                                                                      |
+| **titleTemplate**  | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, takes the corresponding values, `[PAGE_TITLE]` and `[SITE_TITLE]`. Example template: "[PAGE_TITLE] &#124; [SITE_TITLE]". |
+| **description**    | string               | **Yes**  | A one to two sentence description of your webpage.description.                                                                                                                                     |
+| **keywords**       | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                         |
+| **canonicalUrl**   | string               | **Yes**  | The canonical URL of your webpage that will be used as its default app URL. app.                                                                                                                   |
+| **imageUrl**       | string               | **Yes**  | URL for app image. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).            |
+| **excludeTwitter** | boolean              | **No**   | If Twitter meta properties will be excluded, defaults to `false`, but includes if left unchanged.                                                                                                  |
 
 To add all page meta properties, add `SharingHeadEmbed` to the `head` of the page.
 
@@ -43,9 +45,11 @@ const App = ({ Component }: AppProps) => (
   <>
     <Head>
       <SharingHeadEmbed
-        url="@phntms/react-share"
+        pageTitle="Example"
+        siteTitle="@phntms/react-share"
+        titleTemplate="[PAGE_TITLE] | [SITE_TITLE]"
         description="all-in-one"
-        keywords={["metadata", "share", "social-media", "sharing", "opengraph"]}
+        keywords={["react", "metadata", "share", "social-media", "sharing", "opengraph"]}
         canonicalUrl="https://www.npmjs.com/package/@phntms/react-share"
         imageUrl="?"
         />
@@ -58,33 +62,6 @@ export default App;
 ```
 
 **Note**: `imageUrl` and `canonicalUrl` must start with `https://`, else they won't work.
-
-### getShareUrl()
-
-Includes props from every social platform.
-
-```jsx
-import { getShareUrl } from "@phntms/react-share";
-
-const Share = () => (
-  <a
-    href={getShareUrl(SocialPlatforms.Twitter, {
-      url: "https://www.npmjs.com/package/@phntms/react-share",
-    })}
-  >
-    Share to Twitter
-  </a>
-  <a
-    href={getShareUrl(SocialPlatforms.Facebook, {
-      url: "https://www.npmjs.com/package/@phntms/react-share",
-    })}
-  >
-    Share to Facebook
-  </a>
-);
-
-export default Share;
-```
 
 ### getTwitterUrl()
 
@@ -111,6 +88,42 @@ const ShareToTwitter = () => (
 );
 
 export default ShareToTwitter;
+```
+
+### getShareUrl()
+
+If you would rather have all share urls in one place, `getShareUrl()` can be used! It includes props from every social platform listed above, so simply pass in a `SocialPlatform`, and the platforms corresponding props.
+
+Example usage:
+
+```jsx
+import { getShareUrl } from "@phntms/react-share";
+
+const Share = () => (
+  <a
+    href={getShareUrl(SocialPlatforms.Facebook, {
+      url: "https://www.npmjs.com/package/@phntms/react-share",
+    })}
+  >
+    Share to Facebook
+  </a>
+  <a
+    href={getShareUrl(SocialPlatforms.Linkedin, {
+      url: "https://www.npmjs.com/package/@phntms/react-share",
+    })}
+  >
+    Share to Linkedin
+  </a>
+  <a
+    href={getShareUrl(SocialPlatforms.Twitter, {
+      url: "https://www.npmjs.com/package/@phntms/react-share",
+    })}
+  >
+    Share to Twitter
+  </a>
+);
+
+export default Share;
 ```
 
 ## Further Resources
