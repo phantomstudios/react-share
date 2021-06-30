@@ -20,39 +20,33 @@ npm i @phntms/react-share
 
 ## Usage
 
-### &lt;SharingHeadEmbed />
-
-| Property           | Type                 | Required | Notes                                                                                                                                                                                                      |
-| ------------------ | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **pageTitle**      | string               | **Yes**  | Title of page user is currently on, such as 'Home', 'Contact Us'.                                                                                                                                          |
-| **siteTitle**      | string               | **Yes**  | Site wide title. This will be shown whenever someone links your website, so make it quick, snappy and able to draw attention.                                                                              |
-| **titleTemplate**  | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[PAGE_TITLE]` and `[SITE_TITLE]`. Example template: "[PAGE_TITLE] &#124; [SITE_TITLE]". |
-| **description**    | string               | **Yes**  | A one to two sentence description of your webpage.description.                                                                                                                                             |
-| **keywords**       | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                                 |
-| **canonicalUrl**   | string               | **Yes**  | The canonical URL of your webpage that will be used as its default app URL. app.                                                                                                                           |
-| **imageUrl**       | string               | **Yes**  | URL for app image. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).                    |
-| **excludeTwitter** | boolean              | **No**   | If Twitter meta properties will be excluded, defaults to `false`, but includes if left unchanged.                                                                                                          |
-
-To add all page meta properties, add `SharingHeadEmbed` to the `head` of the page.
-
 Example usage in Next.js:
 
 ```JSX
-import { SharingHeadEmbed } from "@phntms/react-share";
+import { MetaHeadEmbed, TwitterHeadEmbed } from "@phntms/react-share";
 import type { AppProps } from "next/app";
 
 const App = ({ Component }: AppProps) => (
   <>
     <Head>
-      <SharingHeadEmbed
+      <MetaHeadEmbed
         pageTitle="Example"
-        siteTitle="@phntms/react-share"
-        titleTemplate="[PAGE_TITLE] | [SITE_TITLE]"
+        siteName="@phntms/react-share"
+        titleTemplate="[PAGE_TITLE] | [SITE_NAME]"
+        url="https://?"
         description="all-in-one"
         keywords={["react", "metadata", "share", "social-media", "opengraph"]}
         canonicalUrl="https://www.npmjs.com/package/@phntms/react-share"
-        imageUrl="?"
-        />
+        imageUrl="https://?"
+        imageAlt="This is a pretty cool image!"
+      />
+      <TwitterHeadEmbed
+        title="@phntms/react-share"
+        description="all-in-one"
+        url="https://?"
+        siteUsername="@phntms"
+        creatorUsername="@phntms"
+      />
     </Head>
     <Component />
   </>
@@ -61,7 +55,43 @@ const App = ({ Component }: AppProps) => (
 export default App;
 ```
 
+### &lt;MetaHeadEmbed />
+
+| Property          | Type                 | Required | Notes                                                                                                                                                                                                   |
+| ----------------- | -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **pageTitle**     | string               | **Yes**  | Every page should have a unique title that describes the page, such as 'Home', 'About' etc.                                                                                                             |
+| **siteName**      | string               | **Yes**  | Name of site. Will be shown whenever someone links your website, so make it quick, snappy and able to draw attention.                                                                                   |
+| **titleTemplate** | string               | **No**   | Title template used to display `pageTitle` and `siteName` in a template, displays the values using corresponding `[PAGE_TITLE]` and `[SITE_NAME]`. Example template: "[PAGE_TITLE] &#124; [SITE_NAME]". |
+| **description**   | string               | **Yes**  | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention.                                                                           |
+| **keywords**      | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                              |
+| **url**           | string               | **Yes**  | Url of site page being shared.                                                                                                                                                                          |
+| **canonicalUrl**  | string               | **Yes**  | The canonical URL of your webpage that will be used as its default app URL.                                                                                                                             |
+| **imageUrl**      | string               | **Yes**  | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).       |
+| **imageAlt**      | string               | **Yes**  | Image alt for users who are visually impaired.                                                                                                                                                          |
+| **locale**        | string               | **No**   | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                     |
+
+To add all page meta properties, add `MetaHeadEmbed` to the `head` of the page.
+
 **Note**: `imageUrl` and `canonicalUrl` must start with `https://`, else they won't work.
+
+### &lt;TwitterHeadEmbed />
+
+| Property            | Type   | Required | Notes                                                                                                                                |
+| ------------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **cardSize**        | string | **Yes**  | Summary card type. Supports `large` and `regular`. Defaults to `large`.                                                              |
+| **title**           | string | **Yes**  | A concise title for the related content.                                                                                             |
+| **siteUsername**    | string | **No**   | The Twitter @username the card should be attributed to.                                                                              |
+| **creatorUsername** | string | **No**   | The Twitter @username for the content creator / author.                                                                              |
+| **description**     | string | **No**   | A description that concisely summarizes the content as appropriate for presentation within a Tweet. Should not be the same as title. |
+| **imageUrl**        | string | **No**   | Image to show in card. Images must be less than 5MB in size. Supported file types; JPG, PNG, WEBP and GIF.                           |
+| **imageAlt**        | string | **Yes**  | Image alt for users who are visually impaired. Maximum 420 characters.                                                               |
+
+`TwitterHeadEmbed` _should_ be used alongside `MetaHeadEmbed` for full sharing support.
+
+**Note**: Image used should be different based on `cardSize`:
+
+- For `large` cards, use a 2:1 aspect ratio (300x157 px minium or 4096x4096 px maximum).
+- For `regular` cards, use a 1:1 aspect ratio (144x144 px minium or 4096x4096 px maximum).
 
 ### getFacebookUrl()
 
