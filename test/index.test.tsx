@@ -8,9 +8,11 @@ const URL = "https://www.npmjs.com/package/@phntms/react-share";
 const TEXT = "I just installed @phntms/react-share and loved it!";
 
 const META: MetaEmbedProps = {
-  title: "@phntms/react-share",
+  pageTitle: "Example",
+  siteTitle: "@phntms/react-share",
+  titleTemplate: "[PAGE_TITLE] | [SITE_TITLE]",
   description: "all-in-one",
-  keywords: ["metadata", "share", "social-media", "sharing", "opengraph"],
+  keywords: ["react", "metadata", "share", "social-media", "opengraph"],
   canonicalUrl: URL,
   imageUrl: "?",
 };
@@ -22,9 +24,7 @@ describe("<SharingHeadEmbed />", () => {
   });
 
   it("doesn't render twitter meta if not included", async () => {
-    const renderer = TestRenderer.create(
-      <SharingHeadEmbed {...META} includeTwitter />
-    );
+    const renderer = TestRenderer.create(<SharingHeadEmbed {...META} />);
     // expect(renderer.toJSON()).toEqual(null);
   });
 });

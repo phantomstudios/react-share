@@ -49,7 +49,7 @@ const App = ({ Component }: AppProps) => (
         siteTitle="@phntms/react-share"
         titleTemplate="[PAGE_TITLE] | [SITE_TITLE]"
         description="all-in-one"
-        keywords={["react", "metadata", "share", "social-media", "sharing", "opengraph"]}
+        keywords={["react", "metadata", "share", "social-media", "opengraph"]}
         canonicalUrl="https://www.npmjs.com/package/@phntms/react-share"
         imageUrl="?"
         />
