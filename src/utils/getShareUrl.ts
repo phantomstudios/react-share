@@ -3,7 +3,7 @@ import getFacebookUrl, { FacebookProps } from "./getFacebookUrl";
 import getLinkedinUrl, { LinkedinProps } from "./getLinkedinUrl";
 import getTwitterUrl, { TwitterProps } from "./getTwitterUrl";
 
-interface AllProps extends FacebookProps, LinkedinProps, TwitterProps {}
+interface Props extends FacebookProps, LinkedinProps, TwitterProps {}
 
 export const getShareUrl = (
   socialPlatform: SocialPlatforms,
@@ -17,7 +17,7 @@ export const getShareUrl = (
     text,
     hashtags,
     related,
-  }: AllProps
+  }: Props
 ) => {
   switch (socialPlatform) {
     case SocialPlatforms.Facebook:

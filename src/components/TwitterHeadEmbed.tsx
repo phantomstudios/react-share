@@ -2,7 +2,7 @@ import React from "react";
 
 export interface TwitterEmbedProps {
   /** Summary card type. */
-  cardSize: "regular" | "large";
+  useLargeCard?: boolean;
 
   /** A concise title for the related content. */
   title: string;
@@ -20,10 +20,13 @@ export interface TwitterEmbedProps {
   description?: string;
 
   /**
-   * Image to show in card. Should be different based on `cardSize`:
-   *  - For `large` cards, use a 2:1 aspect ratio (300x157 px minium or
+   * Image to show in card. _Should_ only be used if image is different to
+   * `MetaHeadEmbed` image.
+   *
+   * Should be different based on `useLargeCard`:
+   *  - For large cards, use a 2:1 aspect ratio (300x157 px minium or
    *     4096x4096 px maximum).
-   *  - For `regular` cards, use a 1:1 aspect ratio (144x144 px minium or
+   *  - For small cards, use a 1:1 aspect ratio (144x144 px minium or
    *     4096x4096 px maximum).
    *
    * Images must be less than 5MB in size.
@@ -39,7 +42,7 @@ export interface TwitterEmbedProps {
 }
 
 const TwitterHeadEmbed = ({
-  cardSize = "large",
+  useLargeCard = false,
   title,
   siteUsername,
   creatorUsername,
@@ -50,14 +53,16 @@ const TwitterHeadEmbed = ({
   <>
     <meta
       name="twitter:card"
-      content={cardSize === "large" ? "summary_large_image" : "summary"}
+      content={useLargeCard ? "summary_large_image" : "summary"}
     />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:site" content={siteUsername} />
-    <meta name="twitter:creator" content={creatorUsername} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={imageUrl} />
-    <meta name="twitter:image:alt" content={imageAlt} />
+    {siteUsername && <meta name="twitter:site" content={siteUsername} />}
+    {creatorUsername && (
+      <meta name="twitter:creator" content={creatorUsername} />
+    )}
+    {description && <meta name="twitter:description" content={description} />}
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+    {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
   </>
 );
 

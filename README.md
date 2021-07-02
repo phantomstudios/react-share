@@ -41,9 +41,9 @@ const App = ({ Component }: AppProps) => (
         imageAlt="This is a pretty cool image!"
       />
       <TwitterHeadEmbed
+        useLargeCard
         title="@phntms/react-share"
         description="all-in-one"
-        url="https://?"
         siteUsername="@phntms"
         creatorUsername="@phntms"
       />
@@ -76,22 +76,22 @@ To add all page meta properties, add `MetaHeadEmbed` to the `head` of the page.
 
 ### &lt;TwitterHeadEmbed />
 
-| Property            | Type   | Required | Notes                                                                                                                                |
-| ------------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **cardSize**        | string | **Yes**  | Summary card type. Supports `large` and `regular`. Defaults to `large`.                                                              |
-| **title**           | string | **Yes**  | A concise title for the related content.                                                                                             |
-| **siteUsername**    | string | **No**   | The Twitter @username the card should be attributed to.                                                                              |
-| **creatorUsername** | string | **No**   | The Twitter @username for the content creator / author.                                                                              |
-| **description**     | string | **No**   | A description that concisely summarizes the content as appropriate for presentation within a Tweet. Should not be the same as title. |
-| **imageUrl**        | string | **No**   | Image to show in card. Images must be less than 5MB in size. Supported file types; JPG, PNG, WEBP and GIF.                           |
-| **imageAlt**        | string | **Yes**  | Image alt for users who are visually impaired. Maximum 420 characters.                                                               |
+| Property            | Type    | Required | Notes                                                                                                                                |
+| ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **useLargeCard**    | boolean | **No**   | Summary card type. If `true`, uses large card, and if `false` uses small card. Defaults to `false`.                                  |
+| **title**           | string  | **Yes**  | A concise title for the related content.                                                                                             |
+| **siteUsername**    | string  | **No**   | The Twitter @username the card should be attributed to.                                                                              |
+| **creatorUsername** | string  | **No**   | The Twitter @username for the content creator / author.                                                                              |
+| **description**     | string  | **No**   | A description that concisely summarizes the content as appropriate for presentation within a Tweet. Should not be the same as title. |
+| **imageUrl**        | string  | **No**   | Image to show in card. Images must be less than 5MB in size. Supported file types; JPG, PNG, WEBP and GIF.                           |
+| **imageAlt**        | string  | **Yes**  | Image alt for users who are visually impaired. Maximum 420 characters.                                                               |
 
 `TwitterHeadEmbed` _should_ be used alongside `MetaHeadEmbed` for full sharing support.
 
-**Note**: Image used should be different based on `cardSize`:
+**Note**: Image used should be different based on `useLargeCard`:
 
-- For `large` cards, use a 2:1 aspect ratio (300x157 px minium or 4096x4096 px maximum).
-- For `regular` cards, use a 1:1 aspect ratio (144x144 px minium or 4096x4096 px maximum).
+- For large cards, use a 2:1 aspect ratio (300x157 px minium or 4096x4096 px maximum).
+- For small cards, use a 1:1 aspect ratio (144x144 px minium or 4096x4096 px maximum).
 
 ### getFacebookUrl()
 
