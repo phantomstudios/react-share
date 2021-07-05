@@ -1,6 +1,6 @@
 {
   "name": "@phntms/react-share",
-  "description": "A all-in-one React library to implement custom Sharing Meta and Social Media Sharing Buttons.",
+  "description": "An all-in-one React library to implement custom Sharing Meta and Social Media Sharing Buttons.",
   "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
