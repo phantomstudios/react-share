@@ -4,7 +4,7 @@
 [![Actions Status][ci-image]][ci-url]
 [![PR Welcome][npm-downloads-image]][npm-downloads-url]
 
-A all-in-one React library to implement custom Page Sharing Meta and Social Media Sharing Buttons.
+An all-in-one React library to implement custom Page Sharing Meta and Social Media Sharing Buttons.
 
 ## Introduction
 
