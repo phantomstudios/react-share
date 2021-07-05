@@ -42,10 +42,10 @@ const App = ({ Component }: AppProps) => (
       />
       <TwitterHeadEmbed
         useLargeCard
-        title="@phntms/react-share"
+        title="Google"
         description="all-in-one"
-        siteUsername="@phntms"
-        creatorUsername="@phntms"
+        siteUsername="@google"
+        creatorUsername="@google"
       />
     </Head>
     <Component />
