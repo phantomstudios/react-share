@@ -1,13 +1,18 @@
-interface Props {
-  argument1: number;
-  argument2?: number;
-}
-
-const useLibrary = ({ argument1, argument2 = 0 }: Props) => {
-  if (!argument1) throw Error("argument 1 not specified");
-  return {
-    something: argument1 + argument2,
-  };
-};
-
-export default useLibrary;
+export {
+  default as SharingHeadEmbed,
+  MetaEmbedProps,
+} from "./components/MetaHeadEmbed";
+export {
+  default as TwitterHeadEmbed,
+  TwitterEmbedProps,
+} from "./components/TwitterHeadEmbed";
+export {
+  default as getLinkedinUrl,
+  LinkedinProps,
+} from "./utils/getLinkedinUrl";
+export { default as getTwitterUrl, TwitterProps } from "./utils/getTwitterUrl";
+export {
+  default as getFacebookUrl,
+  FacebookProps,
+} from "./utils/getFacebookUrl";
+export { SocialPlatforms } from "./types";
