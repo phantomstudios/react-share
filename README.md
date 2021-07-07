@@ -33,8 +33,8 @@ const App = ({ Component }: AppProps) => (
         titleTemplate="[siteTitle] | [pageTitle]"
         siteTitle="PHANTOM"
         pageTitle="Our Work"
-        canonicalUrl="https://phantom.land/"
-        pageURL="https://phantom.land/work/"
+        siteBaseUrl="https://phantom.land"
+        pathPath="work"
         description="Transforming challenges of all shapes and sizes into inventive, engaging and performance driven solutions that change the game."
         keywords={["creative-agency", "phantom", "work"]}
         imageUrl="https://bit.ly/3wiUOuk"
