@@ -180,7 +180,7 @@ If you would rather have all share urls in one place, `getShareUrl()` can be use
 Example usage:
 
 ```jsx
-import { getShareUrl } from "@phntms/react-share";
+import { getShareUrl, SocialPlatforms } from "@phntms/react-share";
 
 const Share = () => (
   <a
