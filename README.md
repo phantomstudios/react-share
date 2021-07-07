@@ -107,11 +107,7 @@ Basic component example usage:
 import { getFacebookUrl } from "@phntms/react-share";
 
 const ShareToFacebook = () => (
-  <a
-    href={getFacebookUrl({
-      url: "https://phantom.land/",
-    })}
-  >
+  <a href={getFacebookUrl({ url: "https://phantom.land/" })}>
     Share to Facebook
   </a>
 );
