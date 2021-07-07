@@ -64,9 +64,11 @@ const MetaHeadEmbed = ({
     typeof keywords === "string" ? keywords : keywords?.join(", ");
 
   const title = titleTemplate
-    ? titleTemplate
-        .replace("[pageTitle]", pageTitle)
-        .replace("[siteTitle]", siteTitle)
+    ? pageTitle === siteTitle
+      ? pageTitle
+      : titleTemplate
+          .replace("[pageTitle]", pageTitle)
+          .replace("[siteTitle]", siteTitle)
     : pageTitle;
 
   return (
