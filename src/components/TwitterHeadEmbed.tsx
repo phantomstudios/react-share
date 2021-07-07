@@ -7,17 +7,17 @@ export interface TwitterEmbedProps {
   /** A concise title for the related content. */
   title: string;
 
-  /** The Twitter @username the card should be attributed to. */
-  siteUsername?: string;
-
-  /** The Twitter @username for the content creator / author. */
-  creatorUsername?: string;
-
   /**
    * A description that concisely summarizes the content as appropriate for
    * presentation within a Tweet. Should not be the same as title.
    */
   description?: string;
+
+  /** The Twitter @username the card should be attributed to. */
+  siteUsername?: string;
+
+  /** The Twitter @username for the content creator / author. */
+  creatorUsername?: string;
 
   /**
    * Image to show in card. _Should_ only be used if image is different to
@@ -44,9 +44,9 @@ export interface TwitterEmbedProps {
 const TwitterHeadEmbed = ({
   useLargeCard = false,
   title,
+  description,
   siteUsername,
   creatorUsername,
-  description,
   imageUrl,
   imageAlt,
 }: TwitterEmbedProps) => (
@@ -56,11 +56,11 @@ const TwitterHeadEmbed = ({
       content={useLargeCard ? "summary_large_image" : "summary"}
     />
     <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
     {siteUsername && <meta name="twitter:site" content={siteUsername} />}
     {creatorUsername && (
       <meta name="twitter:creator" content={creatorUsername} />
     )}
-    {description && <meta name="twitter:description" content={description} />}
     {imageUrl && <meta name="twitter:image" content={imageUrl} />}
     {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
   </>

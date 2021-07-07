@@ -9,6 +9,5 @@ export default function objectToUrlParams(data: UrlDataProps) {
       ([key, value]) =>
         `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`
     );
-
   return params.length ? `?${params.join("&")}` : "";
 }

@@ -30,23 +30,22 @@ const App = ({ Component }: AppProps) => (
   <>
     <Head>
       <MetaHeadEmbed
-        titleTemplate="[PAGE_TITLE] | [SITE_NAME]"
-        siteTitle="Google"
-        siteUrl="https://google.com"
-        pageTitle="About"
-        pageURL="/about"
-        description="all-in-one"
-        keywords={["react", "metadata", "share", "social-media", "opengraph"]}
-        canonicalUrl="https://www.npmjs.com/package/@phntms/react-share"
-        imageUrl="/images/image.jpg"
-        imageAlt="This is a pretty cool image!"
+        titleTemplate="[siteTitle] | [pageTitle]"
+        siteTitle="PHANTOM"
+        pageTitle="Our Work"
+        canonicalUrl="https://phantom.land/"
+        pageURL="https://phantom.land/work/"
+        description="Transforming challenges of all shapes and sizes into inventive, engaging and performance driven solutions that change the game."
+        keywords={["creative-agency", "phantom", "work"]}
+        imageUrl="https://bit.ly/3wiUOuk"
+        imageAlt="PHANTOM logo."
       />
       <TwitterHeadEmbed
         useLargeCard
-        title="Google"
-        description="all-in-one"
-        siteUsername="@google"
-        creatorUsername="@google"
+        title="PHANTOM"
+        description="Transforming challenges of all shapes and sizes into inventive, engaging and performance driven solutions that change the game."
+        siteUsername="@phntmLDN"
+        creatorUsername="@phntmLDN"
       />
     </Head>
     <Component />
@@ -58,18 +57,18 @@ export default App;
 
 ### &lt;MetaHeadEmbed />
 
-| Property          | Type                 | Required | Notes                                                                                                                                                                                                   |
-| ----------------- | -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **pageTitle**     | string               | **Yes**  | Every page should have a unique title that describes the page, such as 'Home', 'About' etc.                                                                                                             |
-| **siteName**      | string               | **Yes**  | Name of site. Will be shown whenever someone links your website, so make it quick, snappy and able to draw attention.                                                                                   |
-| **titleTemplate** | string               | **No**   | Title template used to display `pageTitle` and `siteName` in a template, displays the values using corresponding `[PAGE_TITLE]` and `[SITE_NAME]`. Example template: "[PAGE_TITLE] &#124; [SITE_NAME]". |
-| **description**   | string               | **Yes**  | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention.                                                                           |
-| **keywords**      | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                              |
-| **url**           | string               | **Yes**  | Url of site page being shared.                                                                                                                                                                          |
-| **canonicalUrl**  | string               | **Yes**  | The canonical URL of your webpage that will be used as its default app URL.                                                                                                                             |
-| **imageUrl**      | string               | **Yes**  | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).       |
-| **imageAlt**      | string               | **Yes**  | Image alt for users who are visually impaired.                                                                                                                                                          |
-| **locale**        | string               | **No**   | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                     |
+| Property          | Type                 | Required | Notes                                                                                                                                                                                                  |
+| ----------------- | -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **pageTitle**     | string               | **Yes**  | Every page should have a unique title that describes the page, such as 'Home', 'About' etc.                                                                                                            |
+| **siteTitle**     | string               | **Yes**  | Title of the site, usually the organization / brand name.                                                                                                                                              |
+| **titleTemplate** | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[pageTitle]` and `[siteTitle]`. Example template: "[pageTitle] &#124; [siteTitle]". |
+| **description**   | string               | **Yes**  | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention.                                                                          |
+| **pageUrl**       | string               | **Yes**  | Url of site page being shared.                                                                                                                                                                         |
+| **canonicalUrl**  | string               | **Yes**  | The canonical URL of your webpage that will be used as its default app URL.                                                                                                                            |
+| **keywords**      | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                             |
+| **imageUrl**      | string               | **Yes**  | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).      |
+| **imageAlt**      | string               | **Yes**  | Image alt for users who are visually impaired.                                                                                                                                                         |
+| **locale**        | string               | **No**   | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                    |
 
 To add all page meta properties, add `MetaHeadEmbed` to the `head` of the page.
 
@@ -81,9 +80,9 @@ To add all page meta properties, add `MetaHeadEmbed` to the `head` of the page.
 | ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | **useLargeCard**    | boolean | **No**   | Summary card type. If `true`, uses large card, and if `false` uses small card. Defaults to `false`.                                  |
 | **title**           | string  | **Yes**  | A concise title for the related content.                                                                                             |
+| **description**     | string  | **No**   | A description that concisely summarizes the content as appropriate for presentation within a Tweet. Should not be the same as title. |
 | **siteUsername**    | string  | **No**   | The Twitter @username the card should be attributed to.                                                                              |
 | **creatorUsername** | string  | **No**   | The Twitter @username for the content creator / author.                                                                              |
-| **description**     | string  | **No**   | A description that concisely summarizes the content as appropriate for presentation within a Tweet. Should not be the same as title. |
 | **imageUrl**        | string  | **No**   | Image to show in card. Images must be less than 5MB in size. Supported file types; JPG, PNG, WEBP and GIF.                           |
 | **imageAlt**        | string  | **Yes**  | Image alt for users who are visually impaired. Maximum 420 characters.                                                               |
 

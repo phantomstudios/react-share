@@ -4,31 +4,31 @@ export interface MetaEmbedProps {
   /** Unique page title that describes the page, such as `Home`, `About` etc. */
   pageTitle: string;
 
-  /** Name of the site. */
-  siteName: string;
+  /** Title of the site, usually the organization / brand name. */
+  siteTitle: string;
 
   /**
-   * Title template used to display `pageTitle` and `siteName` in a template.
-   * Replaced `[PAGE_TITLE]` with `pageTitle` and `[SITE_NAME]` with `siteName`.
+   * Title template used to display `pageTitle` and `siteTitle` in a template.
+   * Replaced `[pageTitle]` with `pageTitle` and `[siteTitle]` with `siteTitle`.
    *
-   * Example template: `[PAGE_TITLE] | [SITE_NAME]`.
+   * Example template: `[pageTitle] | [siteTitle]`.
    */
   titleTemplate?: string;
 
   /** Webpage description. Should be less than 160 characters. */
   description: string;
 
+  /** Canonical URL of your webpage that will be used as its default app URL. */
+  canonicalUrl: string;
+
   /** Url of site page being shared. */
-  url: string;
+  pageUrl: string;
 
   /**
    * List of SEO keywords describing what your webpage does.
    * For example, `"your, tags"` or `["your", "tags"]`.
    */
   keywords: string | string[];
-
-  /** Canonical URL of your webpage that will be used as its default app URL. */
-  canonicalUrl: string;
 
   /**
    * Image url of asset to share. Recommended aspect ratio for landscape is
@@ -50,12 +50,12 @@ export interface MetaEmbedProps {
 
 const MetaHeadEmbed = ({
   pageTitle,
-  siteName,
+  siteTitle,
   titleTemplate,
   description,
-  url,
-  keywords,
   canonicalUrl,
+  pageUrl,
+  keywords,
   imageUrl,
   imageAlt,
   locale = "en_US",
@@ -65,8 +65,8 @@ const MetaHeadEmbed = ({
 
   const title = titleTemplate
     ? titleTemplate
-        .replace("[PAGE_TITLE]", pageTitle)
-        .replace("[SITE_NAME]", siteName)
+        .replace("[pageTitle]", pageTitle)
+        .replace("[siteTitle]", siteTitle)
     : pageTitle;
 
   return (
@@ -78,12 +78,12 @@ const MetaHeadEmbed = ({
       <link rel="canonical" href={canonicalUrl} />
 
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:alt" content={imageAlt} />
-      <meta property="og:site_name" content={siteName} />
+      <meta property="og:site_name" content={siteTitle} />
       <meta property="og:locale" content={locale} />
     </>
   );
