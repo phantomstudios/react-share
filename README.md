@@ -30,14 +30,15 @@ const App = ({ Component }: AppProps) => (
   <>
     <Head>
       <MetaHeadEmbed
-        pageTitle="Example"
-        siteName="@phntms/react-share"
         titleTemplate="[PAGE_TITLE] | [SITE_NAME]"
-        url="https://?"
+        siteTitle="Google"
+        siteUrl="https://google.com"
+        pageTitle="About"
+        pageURL="/about"
         description="all-in-one"
         keywords={["react", "metadata", "share", "social-media", "opengraph"]}
         canonicalUrl="https://www.npmjs.com/package/@phntms/react-share"
-        imageUrl="https://?"
+        imageUrl="/images/image.jpg"
         imageAlt="This is a pretty cool image!"
       />
       <TwitterHeadEmbed
