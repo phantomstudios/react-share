@@ -84,7 +84,7 @@ To add all page meta properties, add `MetaHeadEmbed` to the `head` of the page.
 | **siteUsername**    | string  | **No**   | The Twitter @username the card should be attributed to.                                                                              |
 | **creatorUsername** | string  | **No**   | The Twitter @username for the content creator / author.                                                                              |
 | **imageUrl**        | string  | **No**   | Image to show in card. Images must be less than 5MB in size. Supported file types; JPG, PNG, WEBP and GIF.                           |
-| **imageAlt**        | string  | **Yes**  | Image alt for users who are visually impaired. Maximum 420 characters.                                                               |
+| **imageAlt**        | string  | **No**   | Image alt for users who are visually impaired. Maximum 420 characters.                                                               |
 
 `TwitterHeadEmbed` _should_ be used alongside `MetaHeadEmbed` for full sharing support.
 

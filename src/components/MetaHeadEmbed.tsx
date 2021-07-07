@@ -45,7 +45,7 @@ export interface MetaEmbedProps {
    *
    * Defaults to `en_US`.
    */
-  locale: string;
+  locale?: string;
 }
 
 const MetaHeadEmbed = ({
