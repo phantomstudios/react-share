@@ -109,7 +109,7 @@ import { getFacebookUrl } from "@phntms/react-share";
 const ShareToFacebook = () => (
   <a
     href={getFacebookUrl({
-      url: "https://www.npmjs.com/package/@phntms/react-share",
+      url: "https://phantom.land/",
     })}
   >
     Share to Facebook
@@ -134,11 +134,7 @@ Basic component example usage:
 import { getLinkedinUrl } from "@phntms/react-share";
 
 const ShareToLinkedin = () => (
-  <a
-    href={getLinkedinUrl({
-      url: "https://www.npmjs.com/package/@phntms/react-share",
-    })}
-  >
+  <a href={getLinkedinUrl({ url: "https://phantom.land/" })}>
     Share to Linkedin
   </a>
 );
@@ -161,13 +157,7 @@ Basic component example usage:
 import { getTwitterUrl } from "@phntms/react-share";
 
 const ShareToTwitter = () => (
-  <a
-    href={getTwitterUrl({
-      url: "https://www.npmjs.com/package/@phntms/react-share",
-    })}
-  >
-    Share to Twitter
-  </a>
+  <a href={getTwitterUrl({ url: "https://phantom.land/" })}>Share to Twitter</a>
 );
 
 export default ShareToTwitter;
@@ -184,23 +174,17 @@ import { getShareUrl, SocialPlatforms } from "@phntms/react-share";
 
 const Share = () => (
   <a
-    href={getShareUrl(SocialPlatforms.Facebook, {
-      url: "https://www.npmjs.com/package/@phntms/react-share",
-    })}
+    href={getShareUrl(SocialPlatforms.Facebook, {url: "https://phantom.land/" })}
   >
     Share to Facebook
   </a>
   <a
-    href={getShareUrl(SocialPlatforms.Linkedin, {
-      url: "https://www.npmjs.com/package/@phntms/react-share",
-    })}
+    href={getShareUrl(SocialPlatforms.Linkedin, { url: "https://phantom.land/" })}
   >
     Share to Linkedin
   </a>
   <a
-    href={getShareUrl(SocialPlatforms.Twitter, {
-      url: "https://www.npmjs.com/package/@phntms/react-share",
-    })}
+    href={getShareUrl(SocialPlatforms.Twitter, { url: "https://phantom.land/" })}
   >
     Share to Twitter
   </a>
