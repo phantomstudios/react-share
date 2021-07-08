@@ -23,7 +23,7 @@ export interface MetaEmbedProps {
   /** Canonical URL of your webpage that will be used as its default app URL. */
   canonicalUrl?: string;
 
-  /** Url base url of the site, excluding trailing slash. */
+  /** Base URL of the site, excluding trailing slash. */
   siteBaseUrl: string;
 
   /** The path of the page, excluding leading slash. */
