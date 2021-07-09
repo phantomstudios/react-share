@@ -182,7 +182,7 @@ const ShareToWhatsApp = () => (
 export default ShareToWhatsApp;
 ```
 
-Note that WhatsApp links will only work on mobile, so be sure to hide any WhatsApp links if the user is not on a mobile device!
+**Note**: WhatsApp links will only work on mobile, so be sure to hide any WhatsApp links if the user is not on a mobile device!
 
 ### getShareUrl()
 
