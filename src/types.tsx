@@ -7,4 +7,5 @@ export enum SocialPlatforms {
   Facebook,
   Linkedin,
   Twitter,
+  WhatsApp,
 }
