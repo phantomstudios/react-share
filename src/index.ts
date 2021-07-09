@@ -1,12 +1,8 @@
 export {
-  default as SharingHeadEmbed,
+  default as MetaHeadEmbed,
   MetaEmbedProps,
-} from "./components/MetaHeadEmbed";
-
-export {
-  default as TwitterHeadEmbed,
   TwitterEmbedProps,
-} from "./components/TwitterHeadEmbed";
+} from "./components/MetaHeadEmbed";
 
 export {
   default as getLinkedinUrl,
@@ -19,5 +15,10 @@ export {
   default as getFacebookUrl,
   FacebookProps,
 } from "./utils/getFacebookUrl";
+
+export {
+  default as getShareUrl,
+  AllSocialPlatformProps,
+} from "./utils/getShareUrl";
 
 export { SocialPlatforms } from "./types";

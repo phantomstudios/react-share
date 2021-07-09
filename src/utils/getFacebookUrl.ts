@@ -6,14 +6,14 @@ export interface FacebookProps extends BaseShareProps {
   quote?: string;
 
   /** Hashtag to show in Facebook card. */
-  hashtag: string;
+  hashtag?: string;
 }
 
 export const getFacebookUrl = ({ url, quote, hashtag }: FacebookProps) =>
   `https://www.facebook.com/sharer/sharer.php${objectToUrlParams({
     u: url,
     quote,
-    hashtag,
+    hashtag: hashtag?.charAt(0) === "#" ? hashtag : `#${hashtag}`,
   })}`;
 
 export default getFacebookUrl;
