@@ -1,4 +1,5 @@
 import { BaseShareProps } from "../types";
+import { commaSeparate } from "../utils";
 import objectToUrlParams from "./objectToUrlParams";
 
 export interface TwitterProps extends BaseShareProps {
@@ -6,18 +7,18 @@ export interface TwitterProps extends BaseShareProps {
   text?: string;
 
   /** Hashtags to show in Twitter card. */
-  hashtags?: string[];
+  hashtags?: string | string[];
 
   /** Accounts to recommend following. */
-  related?: string[];
+  related?: string | string[];
 }
 
 export const getTwitterUrl = ({ url, text, hashtags, related }: TwitterProps) =>
   `https://twitter.com/share${objectToUrlParams({
     url,
     text,
-    hashtags: hashtags?.join(","),
-    related: related?.join(","),
+    hashtags: commaSeparate(hashtags),
+    related: commaSeparate(related),
   })}`;
 
 export default getTwitterUrl;

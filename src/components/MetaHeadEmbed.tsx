@@ -2,6 +2,8 @@ import React from "react";
 
 import isAbsoluteUrl from "is-absolute-url";
 
+import { commaSeparate } from "../utils";
+
 export interface TwitterEmbedProps {
   /** Summary card size. */
   cardSize: "small" | "large";
@@ -123,9 +125,6 @@ const MetaHeadEmbed = ({
           .replace("[siteTitle]", siteTitle)
     : pageTitle;
 
-  const joinedKeywords =
-    typeof keywords === "string" ? keywords : keywords?.join(", ");
-
   const canonical =
     canonicalUrl &&
     (isAbsoluteUrl(canonicalUrl)
@@ -139,7 +138,11 @@ const MetaHeadEmbed = ({
     <meta key="meta:title" name="title" content={title} />,
     <meta key="meta:description" name="description" content={description} />,
     keywords && (
-      <meta key="meta:keywords" name="keywords" content={joinedKeywords} />
+      <meta
+        key="meta:keywords"
+        name="keywords"
+        content={commaSeparate(keywords)}
+      />
     ),
     canonicalUrl && <link key="canonical" rel="canonical" href={canonical} />,
 

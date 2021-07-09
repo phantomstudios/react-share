@@ -6,7 +6,7 @@ export interface FacebookProps extends BaseShareProps {
   quote?: string;
 
   /** Hashtag to show in Facebook card. */
-  hashtag: string;
+  hashtag?: string;
 }
 
 export const getFacebookUrl = ({ url, quote, hashtag }: FacebookProps) =>

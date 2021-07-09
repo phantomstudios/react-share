@@ -64,7 +64,7 @@ export default PageLayout;
 | **baseSiteUrl**   | string               | **Yes**  | Base site URL, excluding trailing slash.                                                                                                                                                                                          |
 | **pagePath**      | string               | **No**   | The path of the current page, excluding leading slash.                                                                                                                                                                            |
 | **canonicalUrl**  | string               | **No**   | The canonical URL, if your page is a duplicate.                                                                                                                                                                                   |
-| **keywords**      | string&#124;string[] | **No**   | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                                                        |
+| **keywords**      | string&#124;string[] | **No**   | List of SEO keywords describing what your webpage does. Example, `"your, tags"` or `["your", "tags"]`.                                                                                                                            |
 | **imageUrl**      | string               | **Yes**  | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).                                 |
 | **imageAlt**      | string               | **Yes**  | Image alt for users who are visually impaired.                                                                                                                                                                                    |
 | **locale**        | string               | **No**   | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                                               |
@@ -142,12 +142,12 @@ export default ShareToLinkedin;
 
 ### getTwitterUrl()
 
-| Parameter | Type   | Required | Notes                            |
-| --------- | ------ | -------- | -------------------------------- |
-| url       | string | **Yes**  | URL of shared webpage.           |
-| text      | string | **No**   | Text to show in Twitter card.    |
-| hashtags  | string | **No**   | Hashtags to show in Twitter card |
-| related   | string | **No**   | Accounts to recommend following. |
+| Parameter | Type                 | Required | Notes                                                                           |
+| --------- | -------------------- | -------- | ------------------------------------------------------------------------------- |
+| url       | string               | **Yes**  | URL of shared webpage.                                                          |
+| text      | string               | **No**   | Text to show in Twitter card.                                                   |
+| hashtags  | string&#124;string[] | **No**   | Hashtags to show in Twitter card. Example, `"your,tags"` or `["your", "tags"]`. |
+| related   | string&#124;string[] | **No**   | Accounts to recommend following. Example, `"your, tags"` or `["your", "tags"]`. |
 
 Basic component example usage:
 
