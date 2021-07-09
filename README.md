@@ -97,11 +97,11 @@ Twitter will inherit `og:title`, `og:description` and `og:image` tags by default
 
 ### getFacebookUrl()
 
-| Parameter | Type   | Required | Notes                            |
-| --------- | ------ | -------- | -------------------------------- |
-| url       | string | **Yes**  | URL of shared webpage.           |
-| quote     | string | **No**   | Quote to show in Facebook card.  |
-| hashtag   | string | **No**   | Hashtag to show in Facebook card |
+| Parameter | Type   | Required | Notes                             |
+| --------- | ------ | -------- | --------------------------------- |
+| url       | string | **Yes**  | URL of shared webpage.            |
+| quote     | string | **No**   | Quote to show in Facebook card.   |
+| hashtag   | string | **No**   | Hashtag to show in Facebook card. |
 
 Basic component example usage:
 
@@ -119,12 +119,12 @@ export default ShareToFacebook;
 
 ### getLinkedinUrl()
 
-| Parameter | Type   | Required | Notes                                                                    |
-| --------- | ------ | -------- | ------------------------------------------------------------------------ |
-| url       | string | **Yes**  | URL of shared webpage.                                                   |
-| title     | string | **No**   | Title to show in card.                                                   |
-| summary   | string | **No**   | Description to show in card                                              |
-| source    | string | **No**   | Source of the content (for example... your website or application name). |
+| Parameter | Type   | Required | Notes                                                                 |
+| --------- | ------ | -------- | --------------------------------------------------------------------- |
+| url       | string | **Yes**  | URL of shared webpage.                                                |
+| title     | string | **No**   | Title to show in card.                                                |
+| summary   | string | **No**   | Description to show in card.                                          |
+| source    | string | **No**   | Source of the content. For example, your website or application name. |
 
 Basic component example usage:
 
