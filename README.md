@@ -163,10 +163,10 @@ export default ShareToTwitter;
 
 ### getWhatsAppUrl()
 
-| Parameter | Type                 | Required | Notes                                                |
-| --------- | -------------------- | -------- | ---------------------------------------------------- |
-| url       | string               | **Yes**  | URL of shared webpage.                               |
-| text      | string               | **No**   | Text to show in the WhatsApp message before the URL. |
+| Parameter | Type   | Required | Notes                                                |
+| --------- | ------ | -------- | ---------------------------------------------------- |
+| url       | string | **Yes**  | URL of shared webpage.                               |
+| text      | string | **No**   | Text to show in the WhatsApp message before the URL. |
 
 Basic component example usage:
 
@@ -174,7 +174,9 @@ Basic component example usage:
 import { getWhatsAppUrl } from "@phntms/react-share";
 
 const ShareToWhatsApp = () => (
-  <a href={getWhatsAppUrl({ url: "https://phantom.land/" })}>Share to WhatsApp</a>
+  <a href={getWhatsAppUrl({ url: "https://phantom.land/" })}>
+    Share to WhatsApp
+  </a>
 );
 
 export default ShareToWhatsApp;
