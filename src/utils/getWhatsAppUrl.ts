@@ -1,7 +1,6 @@
 import { BaseShareProps } from "../types";
 import objectToUrlParams from "./objectToUrlParams";
 
-
 export interface WhatsAppProps extends BaseShareProps {
   /** Text to prefill into the WhatsApp message. Appears prior to the URL. */
   text?: string;
