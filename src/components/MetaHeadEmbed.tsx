@@ -1,5 +1,7 @@
 import React from "react";
 
+import isAbsoluteUrl from "is-absolute-url";
+
 export interface MetaEmbedProps {
   /** Unique page title that describes the page, such as `Home`, `About` etc. */
   pageTitle: string;
@@ -19,10 +21,13 @@ export interface MetaEmbedProps {
   description: string;
 
   /** Canonical URL of your webpage that will be used as its default app URL. */
-  canonicalUrl: string;
+  canonicalUrl?: string;
 
-  /** Url of site page being shared. */
-  pageUrl: string;
+  /** Base URL of the site, excluding trailing slash. */
+  siteBaseUrl: string;
+
+  /** The path of the page, excluding leading slash. */
+  pagePath?: string;
 
   /**
    * List of SEO keywords describing what your webpage does.
@@ -54,7 +59,8 @@ const MetaHeadEmbed = ({
   titleTemplate,
   description,
   canonicalUrl,
-  pageUrl,
+  siteBaseUrl,
+  pagePath,
   keywords,
   imageUrl,
   imageAlt,
@@ -64,10 +70,20 @@ const MetaHeadEmbed = ({
     typeof keywords === "string" ? keywords : keywords?.join(", ");
 
   const title = titleTemplate
-    ? titleTemplate
-        .replace("[pageTitle]", pageTitle)
-        .replace("[siteTitle]", siteTitle)
+    ? pageTitle === siteTitle
+      ? pageTitle
+      : titleTemplate
+          .replace("[pageTitle]", pageTitle)
+          .replace("[siteTitle]", siteTitle)
     : pageTitle;
+
+  const canonical =
+    canonicalUrl &&
+    (isAbsoluteUrl(canonicalUrl)
+      ? canonicalUrl
+      : `${siteBaseUrl}/${canonicalUrl}`);
+
+  const pageUrl = pagePath ? `${siteBaseUrl}/${pagePath}` : siteBaseUrl;
 
   return (
     <>
@@ -75,7 +91,7 @@ const MetaHeadEmbed = ({
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={joinedKeywords} />
-      <link rel="canonical" href={canonicalUrl} />
+      {canonicalUrl && <link rel="canonical" href={canonical} />}
 
       <meta property="og:type" content="website" />
       <meta property="og:url" content={pageUrl} />
