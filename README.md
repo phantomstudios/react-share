@@ -34,7 +34,7 @@ const App = ({ Component }: AppProps) => (
         siteTitle="PHANTOM"
         pageTitle="Our Work"
         siteBaseUrl="https://phantom.land"
-        pathPath="work"
+        pagePath="work"
         description="Transforming challenges of all shapes and sizes into inventive, engaging and performance driven solutions that change the game."
         keywords={["creative-agency", "phantom", "work"]}
         imageUrl="https://bit.ly/3wiUOuk"
@@ -63,7 +63,7 @@ export default App;
 | **siteTitle**     | string               | **Yes**  | Title of the site, usually the organization / brand name.                                                                                                                                              |
 | **titleTemplate** | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[pageTitle]` and `[siteTitle]`. Example template: "[pageTitle] &#124; [siteTitle]". |
 | **description**   | string               | **Yes**  | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention.                                                                          |
-| **siteBaseUrl**   | string               | **Yes**  | Base URL of the site, excluding trailing slash.                                                                                                                                                    |
+| **siteBaseUrl**   | string               | **Yes**  | Base URL of the site, excluding trailing slash.                                                                                                                                                        |
 | **pagePath**      | string               | **No**   | The path of the current page, excluding leading slash.                                                                                                                                                 |
 | **canonicalUrl**  | string               | **No**   | The canonical URL, if your page is a duplicate.                                                                                                                                                        |
 | **keywords**      | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                             |
