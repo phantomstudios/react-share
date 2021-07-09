@@ -197,7 +197,7 @@ const MetaHeadEmbed = ({
     ),
   ];
 
-  return render([...metaEmbed, twitter && twitterEmbed({ ...twitter })]);
+  return render([metaEmbed, twitter && twitterEmbed({ ...twitter })]);
 };
 
 export default MetaHeadEmbed;
