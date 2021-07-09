@@ -6,10 +6,16 @@ export interface TwitterProps extends BaseShareProps {
   /** Text to show in card. */
   text?: string;
 
-  /** Hashtags to show in Twitter card. */
+  /**
+   * Hashtags to show in Twitter card.
+   * Example: `"your, tags"` or `["your", "tags"]`.
+   */
   hashtags?: string | string[];
 
-  /** Accounts to recommend following. */
+  /**
+   * Accounts to recommend following.
+   * Example: `"your, tags"` or `["your", "tags"]`.
+   */
   related?: string | string[];
 }
 

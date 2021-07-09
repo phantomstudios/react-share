@@ -77,7 +77,7 @@ export interface MetaEmbedProps {
 
   /**
    * List of SEO keywords describing what your webpage does.
-   * For example, `"your, tags"` or `["your", "tags"]`.
+   * Example: `"your, tags"` or `["your", "tags"]`.
    */
   keywords?: string | string[];
 
