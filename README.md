@@ -22,7 +22,7 @@ npm i @phntms/react-share
 
 Example usage in Next.js:
 
-```TSX
+```JSX
 import Head from 'next/head';
 import { MetaHeadEmbed } from "@phntms/react-share";
 
@@ -54,24 +54,21 @@ export default PageLayout;
 
 ### &lt;MetaHeadEmbed />
 
-| Property   | Type                  | Required | Notes                                                                                                                                                                                                                             |
-| ---------- | --------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **render** | meta: React.ReactNode | **Yes**  | Unfortunately `react-helmet` and `next/head` are strict with how they accept meta tags. `react-helmet` doesn't support nesting. Whereas Next.JS only supports some children and not all, therefore a render function is required. |
-
-                                                                                                            |
-
-| **pageTitle** | string | **Yes** | Every page should have a unique title that describes the page, such as 'Home', 'About' etc. |
-| **siteTitle** | string | **Yes** | Title of the site, usually the organization / brand name. |
-| **titleTemplate** | string | **No** | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[pageTitle]` and `[siteTitle]`. Example template: "[pageTitle] &#124; [siteTitle]". |
-| **description** | string | **Yes** | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention. |
-| **baseSiteUrl** | string | **Yes** | Base site URL, excluding trailing slash. |
-| **pagePath** | string | **No** | The path of the current page, excluding leading slash. |
-| **canonicalUrl** | string | **No** | The canonical URL, if your page is a duplicate. |
-| **keywords** | string&#124;string[] | **No** | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`. |
-| **imageUrl** | string | **Yes** | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/). |
-| **imageAlt** | string | **Yes** | Image alt for users who are visually impaired. |
-| **locale** | string | **No** | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`. |
-| **twitter** | TwitterEmbedProps | **No** | Optional twitter embed properties to include. |
+| Property          | Type                 | Required | Notes                                                                                                                                                                                                                             |
+| ----------------- | -------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **render**        | React.ReactNode      | **Yes**  | Unfortunately `react-helmet` and `next/head` are strict with how they accept meta tags. `react-helmet` doesn't support nesting. Whereas Next.JS only supports some children and not all, therefore a render function is required. |
+| **pageTitle**     | string               | **Yes**  | Every page should have a unique title that describes the page, such as 'Home', 'About' etc.                                                                                                                                       |
+| **siteTitle**     | string               | **Yes**  | Title of the site, usually the organization / brand name.                                                                                                                                                                         |
+| **titleTemplate** | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[pageTitle]` and `[siteTitle]`. Example template: "[pageTitle] &#124; [siteTitle]".                            |
+| **description**   | string               | **Yes**  | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention.                                                                                                     |
+| **baseSiteUrl**   | string               | **Yes**  | Base site URL, excluding trailing slash.                                                                                                                                                                                          |
+| **pagePath**      | string               | **No**   | The path of the current page, excluding leading slash.                                                                                                                                                                            |
+| **canonicalUrl**  | string               | **No**   | The canonical URL, if your page is a duplicate.                                                                                                                                                                                   |
+| **keywords**      | string&#124;string[] | **No**   | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                                                        |
+| **imageUrl**      | string               | **Yes**  | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).                                 |
+| **imageAlt**      | string               | **Yes**  | Image alt for users who are visually impaired.                                                                                                                                                                                    |
+| **locale**        | string               | **No**   | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                                               |
+| **twitter**       | TwitterEmbedProps    | **No**   | Optional twitter embed properties to include.                                                                                                                                                                                     |
 
 To use simply add `MetaHeadEmbed` to a shared layout to get the best out of page specific properties such as `pagePath`.
 
