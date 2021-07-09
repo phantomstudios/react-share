@@ -96,7 +96,7 @@ To use simply add `MetaHeadEmbed` to a shared layout to get the best out of page
 
 **A Note on Twitter Tags**
 
-Twitter will inherit `og:title`, `og:description` and `og:image` tags by default, so unless you want unique fields, respective fields in `TwitterHeadEmbed` should be left blank to avoid duplication.
+Twitter will inherit `og:title`, `og:description` and `og:image` tags by default, so unless you want unique fields, respective fields in `TwitterEmbedProps` should be left blank to avoid duplication.
 
 ### getFacebookUrl()
 
