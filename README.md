@@ -8,7 +8,12 @@ An all-in-one React library to implement custom Page Sharing Meta and Social Med
 
 ## Introduction
 
-Designed to use and extend [OpenGraph](https://ogp.me/) standards. Alongside, full sharing support to the following social media platforms; Facebook, Linkedin and Twitter.
+Designed to use and extend [OpenGraph](https://ogp.me/) standards. Alongside, full sharing support to the following social media platforms:
+
+- Facebook
+- Linkedin
+- Twitter
+- WhatsApp
 
 ## Installation
 
@@ -161,6 +166,29 @@ const ShareToTwitter = () => (
 export default ShareToTwitter;
 ```
 
+### getWhatsAppUrl()
+
+| Parameter | Type   | Required | Notes                                                |
+| --------- | ------ | -------- | ---------------------------------------------------- |
+| url       | string | **Yes**  | URL of shared webpage.                               |
+| text      | string | **No**   | Text to show in the WhatsApp message before the URL. |
+
+Basic component example usage:
+
+```jsx
+import { getWhatsAppUrl } from "@phntms/react-share";
+
+const ShareToWhatsApp = () => (
+  <a href={getWhatsAppUrl({ url: "https://phantom.land/" })}>
+    Share to WhatsApp
+  </a>
+);
+
+export default ShareToWhatsApp;
+```
+
+**Note**: WhatsApp links will only work on mobile, so be sure to hide any WhatsApp links if the user is not on a mobile device!
+
 ### getShareUrl()
 
 If you would rather have all share urls in one place, `getShareUrl()` can be used! It includes props from every social platform listed above, so simply pass in a `SocialPlatform`, and the platforms corresponding props.
@@ -185,6 +213,11 @@ const Share = () => (
     href={getShareUrl(SocialPlatforms.Twitter, { url: "https://phantom.land/" })}
   >
     Share to Twitter
+  </a>
+  <a
+    href={getShareUrl(SocialPlatforms.WhatsApp, { url: "https://phantom.land/" })}
+  >
+    Share to WhatsApp
   </a>
 );
 

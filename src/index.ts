@@ -17,6 +17,11 @@ export {
 } from "./utils/getFacebookUrl";
 
 export {
+  default as getWhatsAppUrl,
+  WhatsAppProps,
+} from "./utils/getWhatsAppUrl";
+
+export {
   default as getShareUrl,
   AllSocialPlatformProps,
 } from "./utils/getShareUrl";

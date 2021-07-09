@@ -2,10 +2,12 @@ import { SocialPlatforms } from "../types";
 import getFacebookUrl, { FacebookProps } from "./getFacebookUrl";
 import getLinkedinUrl, { LinkedinProps } from "./getLinkedinUrl";
 import getTwitterUrl, { TwitterProps } from "./getTwitterUrl";
+import getWhatsAppUrl, { WhatsAppProps } from "./getWhatsAppUrl";
 
 export type AllSocialPlatformProps = FacebookProps &
   LinkedinProps &
-  TwitterProps;
+  TwitterProps &
+  WhatsAppProps;
 
 export const getShareUrl = (
   socialPlatform: SocialPlatforms,
@@ -30,6 +32,9 @@ export const getShareUrl = (
 
     case SocialPlatforms.Twitter:
       return getTwitterUrl({ url, text, hashtags, related });
+
+    case SocialPlatforms.WhatsApp:
+      return getWhatsAppUrl({ url, text });
   }
 };
 
