@@ -13,7 +13,7 @@ export const getFacebookUrl = ({ url, quote, hashtag }: FacebookProps) =>
   `https://www.facebook.com/sharer/sharer.php${objectToUrlParams({
     u: url,
     quote,
-    hashtag,
+    hashtag: hashtag?.charAt(0) === "#" ? hashtag : `#${hashtag}`,
   })}`;
 
 export default getFacebookUrl;
