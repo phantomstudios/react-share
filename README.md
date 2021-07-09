@@ -22,11 +22,10 @@ npm i @phntms/react-share
 
 Example usage in Next.js:
 
-```JSX
+```TSX
 import { MetaHeadEmbed, TwitterHeadEmbed } from "@phntms/react-share";
-import type { AppProps } from "next/app";
 
-const App = ({ Component }: AppProps) => (
+const PageLayout: React.FC = ({children}) => {
   <>
     <Head>
       <MetaHeadEmbed
@@ -48,11 +47,11 @@ const App = ({ Component }: AppProps) => (
         creatorUsername="@phntmLDN"
       />
     </Head>
-    <Component />
+    {children}
   </>
 );
 
-export default App;
+export default PageLayout;
 ```
 
 ### &lt;MetaHeadEmbed />
