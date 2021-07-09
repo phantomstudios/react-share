@@ -1,12 +1,8 @@
 export {
-  default as SharingHeadEmbed,
+  default as MetaHeadEmbed,
   MetaEmbedProps,
-} from "./components/MetaHeadEmbed";
-
-export {
-  default as TwitterHeadEmbed,
   TwitterEmbedProps,
-} from "./components/TwitterHeadEmbed";
+} from "./components/MetaHeadEmbed";
 
 export {
   default as getLinkedinUrl,
