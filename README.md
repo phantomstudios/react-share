@@ -8,7 +8,12 @@ An all-in-one React library to implement custom Page Sharing Meta and Social Med
 
 ## Introduction
 
-Designed to use and extend [OpenGraph](https://ogp.me/) standards. Alongside, full sharing support to the following social media platforms; Facebook, Linkedin and Twitter.
+Designed to use and extend [OpenGraph](https://ogp.me/) standards. Alongside, full sharing support to the following social media platforms:
+
+* Facebook
+* Linkedin
+* Twitter
+* WhatsApp
 
 ## Installation
 
