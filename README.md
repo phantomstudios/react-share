@@ -33,8 +33,8 @@ const App = ({ Component }: AppProps) => (
         titleTemplate="[siteTitle] | [pageTitle]"
         siteTitle="PHANTOM"
         pageTitle="Our Work"
-        canonicalUrl="https://phantom.land/"
-        pageURL="https://phantom.land/work/"
+        siteBaseUrl="https://phantom.land"
+        pagePath="work"
         description="Transforming challenges of all shapes and sizes into inventive, engaging and performance driven solutions that change the game."
         keywords={["creative-agency", "phantom", "work"]}
         imageUrl="https://bit.ly/3wiUOuk"
@@ -57,18 +57,19 @@ export default App;
 
 ### &lt;MetaHeadEmbed />
 
-| Property          | Type                 | Required | Notes                                                                                                                                                                                                                                                                                    |
-| ----------------- | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **pageTitle**     | string               | **Yes**  | Every page should have a unique title that describes the page, such as 'Home', 'About' etc.                                                                                                                                                                                              |
-| **siteTitle**     | string               | **Yes**  | Title of the site, usually the organization / brand name.                                                                                                                                                                                                                                |
-| **titleTemplate** | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[pageTitle]` and `[siteTitle]`. Example template: "[pageTitle] &#124; [siteTitle]". Note, if `pageTitle` and `siteTitle` are the same only the `siteTitle` is output. |
-| **description**   | string               | **Yes**  | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention.                                                                                                                                                            |
-| **pageUrl**       | string               | **Yes**  | Url of site page being shared.                                                                                                                                                                                                                                                           |
-| **canonicalUrl**  | string               | **Yes**  | The canonical URL of your webpage that will be used as its default app URL.                                                                                                                                                                                                              |
-| **keywords**      | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                                                                                                               |
-| **imageUrl**      | string               | **Yes**  | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).                                                                                        |
-| **imageAlt**      | string               | **Yes**  | Image alt for users who are visually impaired.                                                                                                                                                                                                                                           |
-| **locale**        | string               | **No**   | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                                                                                                      |
+| Property          | Type                 | Required | Notes                                                                                                                                                                                                  |
+| ----------------- | -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **pageTitle**     | string               | **Yes**  | Every page should have a unique title that describes the page, such as 'Home', 'About' etc.                                                                                                            |
+| **siteTitle**     | string               | **Yes**  | Title of the site, usually the organization / brand name.                                                                                                                                              |
+| **titleTemplate** | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[pageTitle]` and `[siteTitle]`. Example template: "[pageTitle] &#124; [siteTitle]". |
+| **description**   | string               | **Yes**  | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention.                                                                          |
+| **siteBaseUrl**   | string               | **Yes**  | Base URL of the site, excluding trailing slash.                                                                                                                                                        |
+| **pagePath**      | string               | **No**   | The path of the current page, excluding leading slash.                                                                                                                                                 |
+| **canonicalUrl**  | string               | **No**   | The canonical URL, if your page is a duplicate.                                                                                                                                                        |
+| **keywords**      | string&#124;string[] | **Yes**  | List of SEO keywords describing what your webpage does. For example, `"your, tags"` or `["your", "tags"]`.                                                                                             |
+| **imageUrl**      | string               | **Yes**  | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/).      |
+| **imageAlt**      | string               | **Yes**  | Image alt for users who are visually impaired.                                                                                                                                                         |
+| **locale**        | string               | **No**   | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                    |
 
 To add all page meta properties, add `MetaHeadEmbed` to the `head` of the page.
 
