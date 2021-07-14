@@ -133,6 +133,10 @@ const MetaHeadEmbed = ({
 
   const pageUrl = pagePath ? `${baseSiteUrl}/${pagePath}` : baseSiteUrl;
 
+  const image =
+    imageUrl &&
+    (isAbsoluteUrl(imageUrl) ? imageUrl : `${baseSiteUrl}/${imageUrl}`);
+
   const metaEmbed = [
     <title key="title">{title}</title>,
     <meta key="meta:title" name="title" content={title} />,
@@ -154,7 +158,7 @@ const MetaHeadEmbed = ({
       property="og:description"
       content={description}
     />,
-    <meta key="og:image" property="og:image" content={imageUrl} />,
+    <meta key="og:image" property="og:image" content={image} />,
     <meta key="og:image:alt" property="og:image:alt" content={imageAlt} />,
     <meta key="og:site_name" property="og:site_name" content={siteTitle} />,
     <meta key="og:locale" property="og:locale" content={locale} />,
