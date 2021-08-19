@@ -50,7 +50,7 @@ export interface MetaEmbedProps {
   render: (meta: React.ReactNode) => JSX.Element;
 
   /** Unique page title that describes the page, such as `Home`, `About` etc. */
-  pageTitle: string;
+  pageTitle?: string;
 
   /** Title of the site, usually the organization / brand name. */
   siteTitle: string;
@@ -117,13 +117,12 @@ const MetaHeadEmbed = ({
   locale = "en_US",
   twitter,
 }: MetaEmbedProps) => {
-  const title = titleTemplate
-    ? pageTitle === siteTitle
-      ? pageTitle
-      : titleTemplate
-          .replace("[pageTitle]", pageTitle)
-          .replace("[siteTitle]", siteTitle)
-    : pageTitle;
+  let title = siteTitle;
+  if (titleTemplate && pageTitle && pageTitle !== siteTitle) {
+    title = titleTemplate
+      .replace("[pageTitle]", pageTitle)
+      .replace("[siteTitle]", siteTitle);
+  }
 
   const canonical =
     canonicalUrl &&
