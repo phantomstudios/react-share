@@ -1,4 +1,5 @@
 import { SocialPlatforms } from "../types";
+import getCurrentUrlAndCopyToClipboard from "./getCurrentUrlAndCopyToClipboard";
 import getFacebookUrl, { FacebookProps } from "./getFacebookUrl";
 import getLinkedinUrl, { LinkedinProps } from "./getLinkedinUrl";
 import getTwitterUrl, { TwitterProps } from "./getTwitterUrl";
