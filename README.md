@@ -15,6 +15,8 @@ Designed to use and extend [OpenGraph](https://ogp.me/) standards. Alongside, fu
 - Twitter
 - WhatsApp
 
+Including copy current url to clipboard support.
+
 ## Installation
 
 Install this package with `npm`.
