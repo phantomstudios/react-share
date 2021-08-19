@@ -199,29 +199,35 @@ Example usage:
 import { getShareUrl, SocialPlatforms } from "@phntms/react-share";
 
 const Share = () => (
-  <a
-    href={getShareUrl(SocialPlatforms.Facebook, {url: "https://phantom.land/" })}
-  >
+  <a href={getShareUrl(SocialPlatforms.Facebook, {url: "https://phantom.land/" })}>
     Share to Facebook
   </a>
-  <a
-    href={getShareUrl(SocialPlatforms.Linkedin, { url: "https://phantom.land/" })}
-  >
+  <a href={getShareUrl(SocialPlatforms.Linkedin, { url: "https://phantom.land/" })}>
     Share to Linkedin
   </a>
-  <a
-    href={getShareUrl(SocialPlatforms.Twitter, { url: "https://phantom.land/" })}
-  >
+  <a href={getShareUrl(SocialPlatforms.Twitter, { url: "https://phantom.land/" })}>
     Share to Twitter
   </a>
-  <a
-    href={getShareUrl(SocialPlatforms.WhatsApp, { url: "https://phantom.land/" })}
-  >
+  <a href={getShareUrl(SocialPlatforms.WhatsApp, { url: "https://phantom.land/" })}>
     Share to WhatsApp
   </a>
 );
 
 export default Share;
+```
+
+### getCurrentUrlAndCopyToClipboard()
+
+Method used to copy current window URL and copy it into your clipboard.
+
+```jsx
+import { getCurrentUrlAndCopyToClipboard } from "@phntms/react-share";
+
+const Copy = () => (
+  <div onClick={() => getCurrentUrlAndCopyToClipboard()}>Copy</div>
+);
+
+export default Copy;
 ```
 
 ## Further Resources

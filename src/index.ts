@@ -26,4 +26,6 @@ export {
   AllSocialPlatformProps,
 } from "./utils/getShareUrl";
 
+export { default as getCurrentUrlAndCopyToClipboard } from "./utils/getCurrentUrlAndCopyToClipboard";
+
 export { SocialPlatforms } from "./types";
