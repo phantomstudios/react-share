@@ -39,7 +39,7 @@ const PageLayout: React.FC = ({children}) => {
       render={(meta: React.ReactNode) => <Head>{meta}</Head>}
       siteTitle="PHANTOM"
       pageTitle="Our Work"
-      titleTemplate="[siteTitle] | [pageTitle]"
+      titleTemplate="[pageTitle] | [siteTitle]"
       description="Transforming challenges of all shapes and sizes into inventive, engaging and performance driven solutions that change the game."
       baseSiteUrl="https://phantom.land"
       pagePath="work"
