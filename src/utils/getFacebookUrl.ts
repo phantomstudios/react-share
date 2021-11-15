@@ -9,11 +9,18 @@ export interface FacebookProps extends BaseShareProps {
   hashtag?: string;
 }
 
-export const getFacebookUrl = ({ url, quote, hashtag }: FacebookProps) =>
-  `https://www.facebook.com/sharer/sharer.php${objectToUrlParams({
+export const getFacebookUrl = ({
+  url,
+  quote,
+  hashtag: suppliedHashtag,
+}: FacebookProps) => {
+  let hashtag = suppliedHashtag;
+  if (hashtag && hashtag.charAt(0) !== "#") hashtag = `#${hashtag}`;
+  return `https://www.facebook.com/sharer/sharer.php${objectToUrlParams({
     u: url,
     quote,
-    hashtag: hashtag?.charAt(0) === "#" ? hashtag : `#${hashtag}`,
+    hashtag,
   })}`;
+};
 
 export default getFacebookUrl;
