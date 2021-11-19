@@ -67,7 +67,7 @@ export interface MetaEmbedProps {
   description: string;
 
   /**
-   * Disable canonical if not desired, defaults to false.
+   * Disable canonical if not desired, defaults to `false`.
    */
   disableCanonical?: boolean;
 
