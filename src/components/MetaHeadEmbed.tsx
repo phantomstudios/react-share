@@ -164,7 +164,7 @@ const MetaHeadEmbed = ({
     ),
 
     <meta key="og:type" property="og:type" content="website" />,
-    <meta key="og:url" property="og:url" content={pagePath} />,
+    <meta key="og:url" property="og:url" content={pathUrl} />,
     <meta key="og:title" property="og:title" content={title} />,
     <meta
       key="og:description"
