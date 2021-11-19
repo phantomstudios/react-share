@@ -138,7 +138,6 @@ const MetaHeadEmbed = ({
 
   const metaEmbed = [
     <title key="title">{title}</title>,
-    <meta key="meta:title" name="title" content={title} />,
     <meta key="meta:description" name="description" content={description} />,
     keywords && (
       <meta
