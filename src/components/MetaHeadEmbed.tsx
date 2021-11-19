@@ -67,8 +67,7 @@ export interface MetaEmbedProps {
   description: string;
 
   /**
-   * Enable canonical even if the canonicalUrl is empty.
-   * Mainly used for homepages, where the canonicalPath is empty.
+   * Disable canonical if not desired. Default to false.
    */
   disableCanonical?: boolean;
 
@@ -143,7 +142,7 @@ const MetaHeadEmbed = ({
     ? isAbsoluteUrl(pagePath)
       ? pagePath
       : `${baseSiteUrl}/${pagePath}`
-    : `${baseSiteUrl}/${pagePath}`;
+    : baseSiteUrl;
 
   const image =
     imageUrl &&
