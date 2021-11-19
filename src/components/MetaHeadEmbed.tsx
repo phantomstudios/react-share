@@ -66,8 +66,14 @@ export interface MetaEmbedProps {
   /** Webpage description. Should be less than 160 characters. */
   description: string;
 
+  /**
+   * Enable canonical even if the canonicalUrl is empty.
+   * Mainly used for homepages, where the canonicalPath is empty.
+   */
+  disableCanonical?: boolean;
+
   /** Canonical URL of your webpage that will be used as its default app URL. */
-  canonicalUrl?: string;
+  canonicalPath?: string;
 
   /** Base site URL, excluding trailing slash. */
   baseSiteUrl: string;
@@ -118,7 +124,8 @@ const MetaHeadEmbed = ({
   siteTitle,
   titleTemplate,
   description,
-  canonicalUrl,
+  disableCanonical = false,
+  canonicalPath,
   baseSiteUrl,
   pagePath,
   keywords,
@@ -136,11 +143,13 @@ const MetaHeadEmbed = ({
       .replace("[siteTitle]", siteTitle);
   }
 
-  const canonical =
-    canonicalUrl &&
-    (isAbsoluteUrl(canonicalUrl)
-      ? canonicalUrl
-      : `${baseSiteUrl}/${canonicalUrl}`);
+  const canonical = !disableCanonical
+    ? canonicalPath
+      ? isAbsoluteUrl(canonicalPath)
+        ? canonicalPath
+        : `${baseSiteUrl}/${canonicalPath}`
+      : `${baseSiteUrl}/${canonicalPath}`
+    : false;
 
   const pageUrl = pagePath ? `${baseSiteUrl}/${pagePath}` : baseSiteUrl;
 
@@ -158,7 +167,8 @@ const MetaHeadEmbed = ({
         content={commaSeparate(keywords)}
       />
     ),
-    canonicalUrl && <link key="canonical" rel="canonical" href={canonical} />,
+
+    canonical && <link key="canonical" rel="canonical" href={canonical} />,
 
     <meta key="og:type" property="og:type" content="website" />,
     <meta key="og:url" property="og:url" content={pageUrl} />,
