@@ -85,7 +85,17 @@ export interface MetaEmbedProps {
    * Image url of asset to share. Recommended aspect ratio for landscape is
    * 1.9:1 (1200x630) or for squares 1:1 (1200x1200).
    */
-  imageUrl: string;
+  imageUrl?: string;
+
+  /**
+   * Width of share image.
+   */
+  imageWidth?: number;
+
+  /**
+   * height of share image.
+   */
+  imageHeight: number;
 
   /** Image alt for users who are visually impaired. */
   imageAlt: string;
@@ -114,6 +124,8 @@ const MetaHeadEmbed = ({
   keywords,
   imageUrl,
   imageAlt,
+  imageWidth = 1200,
+  imageHeight = 630,
   locale = "en_US",
   twitter,
 }: MetaEmbedProps) => {
@@ -158,6 +170,16 @@ const MetaHeadEmbed = ({
       content={description}
     />,
     <meta key="og:image" property="og:image" content={image} />,
+    <meta
+      key="og:image:width"
+      property="og:image:width"
+      content={imageWidth.toString()}
+    />,
+    <meta
+      key="og:image:height"
+      property="og:image:height"
+      content={imageHeight.toString()}
+    />,
     <meta key="og:image:alt" property="og:image:alt" content={imageAlt} />,
     <meta key="og:site_name" property="og:site_name" content={siteTitle} />,
     <meta key="og:locale" property="og:locale" content={locale} />,
