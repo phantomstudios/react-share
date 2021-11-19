@@ -95,7 +95,7 @@ export interface MetaEmbedProps {
   /**
    * height of share image.
    */
-  imageHeight: number;
+  imageHeight?: number;
 
   /** Image alt for users who are visually impaired. */
   imageAlt: string;
