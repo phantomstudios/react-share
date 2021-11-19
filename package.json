@@ -1,7 +1,7 @@
 {
   "name": "@phntms/react-share",
   "description": "An all-in-one React library to implement custom Sharing Meta and Social Media Sharing Buttons.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://github.com/phantomstudios/react-share#readme",

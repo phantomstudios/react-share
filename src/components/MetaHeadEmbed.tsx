@@ -66,8 +66,10 @@ export interface MetaEmbedProps {
   /** Webpage description. Should be less than 160 characters. */
   description: string;
 
-  /** Canonical URL of your webpage that will be used as its default app URL. */
-  canonicalUrl?: string;
+  /**
+   * Disable canonical if not desired, defaults to `false`.
+   */
+  disableCanonical?: boolean;
 
   /** Base site URL, excluding trailing slash. */
   baseSiteUrl: string;
@@ -118,7 +120,7 @@ const MetaHeadEmbed = ({
   siteTitle,
   titleTemplate,
   description,
-  canonicalUrl,
+  disableCanonical = false,
   baseSiteUrl,
   pagePath,
   keywords,
@@ -136,13 +138,11 @@ const MetaHeadEmbed = ({
       .replace("[siteTitle]", siteTitle);
   }
 
-  const canonical =
-    canonicalUrl &&
-    (isAbsoluteUrl(canonicalUrl)
-      ? canonicalUrl
-      : `${baseSiteUrl}/${canonicalUrl}`);
-
-  const pageUrl = pagePath ? `${baseSiteUrl}/${pagePath}` : baseSiteUrl;
+  const pageUrl = pagePath
+    ? isAbsoluteUrl(pagePath)
+      ? pagePath
+      : `${baseSiteUrl}/${pagePath}`
+    : baseSiteUrl;
 
   const image =
     imageUrl &&
@@ -158,7 +158,10 @@ const MetaHeadEmbed = ({
         content={commaSeparate(keywords)}
       />
     ),
-    canonicalUrl && <link key="canonical" rel="canonical" href={canonical} />,
+
+    !disableCanonical && (
+      <link key="canonical" rel="canonical" href={pageUrl} />
+    ),
 
     <meta key="og:type" property="og:type" content="website" />,
     <meta key="og:url" property="og:url" content={pageUrl} />,
