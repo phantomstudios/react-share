@@ -138,7 +138,7 @@ const MetaHeadEmbed = ({
       .replace("[siteTitle]", siteTitle);
   }
 
-  const pathUrl = pagePath
+  const pageUrl = pagePath
     ? isAbsoluteUrl(pagePath)
       ? pagePath
       : `${baseSiteUrl}/${pagePath}`
@@ -160,11 +160,11 @@ const MetaHeadEmbed = ({
     ),
 
     !disableCanonical && (
-      <link key="canonical" rel="canonical" href={pathUrl} />
+      <link key="canonical" rel="canonical" href={pageUrl} />
     ),
 
     <meta key="og:type" property="og:type" content="website" />,
-    <meta key="og:url" property="og:url" content={pathUrl} />,
+    <meta key="og:url" property="og:url" content={pageUrl} />,
     <meta key="og:title" property="og:title" content={title} />,
     <meta
       key="og:description"
