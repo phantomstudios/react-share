@@ -222,7 +222,7 @@ export default Share;
 
 ### copyToClipboard()
 
-Method used to copy a given URL and copy it into your clipboard.
+Method used to copy some given text and copy it into your clipboard.
 
 ```jsx
 import { copyToClipboard } from "@phntms/react-share";

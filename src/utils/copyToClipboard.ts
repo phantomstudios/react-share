@@ -1,6 +1,6 @@
-const fallbackCopyToClipboard = (url: string) => {
+const fallbackCopyToClipboard = (text: string) => {
   const placeholder = document.createElement("textarea");
-  placeholder.value = url;
+  placeholder.value = text;
 
   // Avoid scrolling to bottom
   placeholder.style.top = "0";
@@ -16,9 +16,9 @@ const fallbackCopyToClipboard = (url: string) => {
   document.body.removeChild(placeholder);
 };
 
-export const copyToClipboard = (url: string) => {
-  if (!navigator.clipboard) fallbackCopyToClipboard(url);
-  else navigator.clipboard.writeText(url);
+export const copyToClipboard = (text: string) => {
+  if (!navigator.clipboard) fallbackCopyToClipboard(text);
+  else navigator.clipboard.writeText(text);
 };
 
 export default copyToClipboard;
