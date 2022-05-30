@@ -19,7 +19,6 @@ const fallbackCopyToClipboard = (url: string) => {
 export const copyToClipboard = (url: string) => {
   if (!navigator.clipboard) fallbackCopyToClipboard(url);
   else navigator.clipboard.writeText(url);
-  return url;
 };
 
 export default copyToClipboard;
