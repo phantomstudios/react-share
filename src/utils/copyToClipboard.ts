@@ -16,11 +16,10 @@ const fallbackCopyToClipboard = (url: string) => {
   document.body.removeChild(placeholder);
 };
 
-export const getCurrentUrlAndCopyToClipboard = () => {
-  const url = window.location.href;
+export const copyToClipboard = (url: string) => {
   if (!navigator.clipboard) fallbackCopyToClipboard(url);
   else navigator.clipboard.writeText(url);
   return url;
 };
 
-export default getCurrentUrlAndCopyToClipboard;
+export default copyToClipboard;

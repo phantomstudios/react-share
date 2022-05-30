@@ -220,15 +220,15 @@ const Share = () => (
 export default Share;
 ```
 
-### getCurrentUrlAndCopyToClipboard()
+### copyToClipboard()
 
-Method used to copy current window URL and copy it into your clipboard.
+Method used to copy a given URL and copy it into your clipboard.
 
 ```jsx
-import { getCurrentUrlAndCopyToClipboard } from "@phntms/react-share";
+import { copyToClipboard } from "@phntms/react-share";
 
 const Copy = () => (
-  <div onClick={() => getCurrentUrlAndCopyToClipboard()}>Copy</div>
+  <div onClick={() => copyToClipboard("https://phantom.land")}>Copy</div>
 );
 
 export default Copy;
