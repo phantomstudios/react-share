@@ -100,7 +100,7 @@ export interface MetaEmbedProps {
   imageHeight?: number;
 
   /** Image alt for users who are visually impaired. */
-  imageAlt: string;
+  imageAlt?: string;
 
   /**
    * The locale these tags are marked up in, such as; `en_GB`,

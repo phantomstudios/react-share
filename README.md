@@ -64,20 +64,20 @@ export default PageLayout;
 | Property             | Type                 | Required | Notes                                                                                                                                                                                                                                                                                                                  |
 | -------------------- | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **render**           | React.ReactNode      | **Yes**  | Unfortunately `react-helmet` and `next/head` are strict with how they accept meta tags. `react-helmet` doesn't support nesting. Whereas Next.JS only supports some children and not all, therefore a render function is required.                                                                                      |
-| **pageTitle**        | string               | **No**   | Unique page title that describes the page, such as `Home`, `About` etc. etc.                                                                                                                                                                                                                                           |
+| **pageTitle**        | string               | No       | Unique page title that describes the page, such as `Home`, `About` etc. etc.                                                                                                                                                                                                                                           |
 | **siteTitle**        | string               | **Yes**  | Title of the site, usually the organization / brand name. If `pageTitle` and `siteTitle` are the same, only this shows.                                                                                                                                                                                                |
-| **titleTemplate**    | string               | **No**   | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[pageTitle]` and `[siteTitle]`. Example template: "[pageTitle] &#124; [siteTitle]".                                                                                                                 |
+| **titleTemplate**    | string               | No       | Title template used to display `pageTitle` and `siteTitle` in a template, displays the values using corresponding `[pageTitle]` and `[siteTitle]`. Example template: "[pageTitle] &#124; [siteTitle]".                                                                                                                 |
 | **description**      | string               | **Yes**  | A one to two sentence description of your webpage. Keep it within 160 characters, and write it to catch the user's attention.                                                                                                                                                                                          |
 | **baseSiteUrl**      | string               | **Yes**  | Base site URL, excluding trailing slash.                                                                                                                                                                                                                                                                               |
-| **pagePath**         | string               | **No**   | The path of the current page, excluding leading slash.                                                                                                                                                                                                                                                                 |
-| **disableCanonical** | boolean              | **No**   | Disable canonical if not desired, defaults to `false`.                                                                                                                                                                                                                                                                 |
-| **keywords**         | string&#124;string[] | **No**   | List of SEO keywords describing what your webpage does. Example, `"your, tags"` or `["your", "tags"]`.                                                                                                                                                                                                                 |
-| **imageUrl**         | string               | **Yes**  | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/). If a relative URL is provided, `baseSiteUrl` is prefixed. If specifying a relative URL do not add the leading slash. |
-| **imageAlt**         | string               | **Yes**  | Image alt for users who are visually impaired.                                                                                                                                                                                                                                                                         |
-| **imageWidth**       | number               | **No**   | Width of share image, defaults to `1200`.                                                                                                                                                                                                                                                                              |
-| **imageHeight**      | number               | **No**   | Height of share image, defaults to `630`.                                                                                                                                                                                                                                                                              |
-| **locale**           | string               | **No**   | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                                                                                                                                    |
-| **twitter**          | TwitterEmbedProps    | **No**   | Optional twitter embed properties to include.                                                                                                                                                                                                                                                                          |
+| **pagePath**         | string               | No       | The path of the current page, excluding leading slash.                                                                                                                                                                                                                                                                 |
+| **disableCanonical** | boolean              | No       | Disable canonical if not desired, defaults to `false`.                                                                                                                                                                                                                                                                 |
+| **keywords**         | string&#124;string[] | No       | List of SEO keywords describing what your webpage does. Example, `"your, tags"` or `["your", "tags"]`.                                                                                                                                                                                                                 |
+| **imageUrl**         | string               | No       | Image url of asset to share. Recommended aspect ratio for landscape is 1.9:1 (1200x630) or for squares 1:1 (1200x1200). For more info, visit [here](https://iamturns.com/open-graph-image-size/). If a relative URL is provided, `baseSiteUrl` is prefixed. If specifying a relative URL do not add the leading slash. |
+| **imageAlt**         | string               | No       | Image alt for users who are visually impaired.                                                                                                                                                                                                                                                                         |
+| **imageWidth**       | number               | No       | Width of share image, defaults to `1200`.                                                                                                                                                                                                                                                                              |
+| **imageHeight**      | number               | No       | Height of share image, defaults to `630`.                                                                                                                                                                                                                                                                              |
+| **locale**           | string               | No       | The locale these tags are marked up in, such as; `en_GB`, `fr_FR` and `es_ES`. Defaults to `en_US`.                                                                                                                                                                                                                    |
+| **twitter**          | TwitterEmbedProps    | No       | Optional twitter embed properties to include.                                                                                                                                                                                                                                                                          |
 
 To use simply add `MetaHeadEmbed` to a shared layout to get the best out of page specific properties such as `pagePath`.
 
@@ -88,12 +88,12 @@ To use simply add `MetaHeadEmbed` to a shared layout to get the best out of page
 | Property            | Type                 | Required | Notes                                                                                                                                                                                                      |
 | ------------------- | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **cardSize**        | 'small'&#124;'large' | **Yes**  | Summary card size.                                                                                                                                                                                         |
-| **title**           | string               | **No**   | A concise title for the related content. If left blank, page title will be inherited instead.                                                                                                              |
-| **description**     | string               | **No**   | A description that concisely summarizes the content as appropriate for presentation within a Tweet. Should not be the same as title. If left blank, `MetaHeadEmbed` description will be inherited instead. |
-| **siteUsername**    | string               | **No**   | The Twitter @username the card should be attributed to.                                                                                                                                                    |
-| **creatorUsername** | string               | **No**   | The Twitter @username for the content creator / author.                                                                                                                                                    |
-| **imageUrl**        | string               | **No**   | Image to show in card. Images must be less than 5MB in size. Supported file types; JPG, PNG, WEBP and GIF.                                                                                                 |
-| **imageAlt**        | string               | **No**   | Image alt for users who are visually impaired. Maximum 420 characters.                                                                                                                                     |
+| **title**           | string               | No       | A concise title for the related content. If left blank, page title will be inherited instead.                                                                                                              |
+| **description**     | string               | No       | A description that concisely summarizes the content as appropriate for presentation within a Tweet. Should not be the same as title. If left blank, `MetaHeadEmbed` description will be inherited instead. |
+| **siteUsername**    | string               | No       | The Twitter @username the card should be attributed to.                                                                                                                                                    |
+| **creatorUsername** | string               | No       | The Twitter @username for the content creator / author.                                                                                                                                                    |
+| **imageUrl**        | string               | No       | Image to show in card. Images must be less than 5MB in size. Supported file types; JPG, PNG, WEBP and GIF.                                                                                                 |
+| **imageAlt**        | string               | No       | Image alt for users who are visually impaired. Maximum 420 characters.                                                                                                                                     |
 
 **Note**: Image used should be different based on `cardSize`:
 
@@ -109,8 +109,8 @@ Twitter will inherit `og:title`, `og:description` and `og:image` tags by default
 | Parameter | Type   | Required | Notes                             |
 | --------- | ------ | -------- | --------------------------------- |
 | url       | string | **Yes**  | URL of shared webpage.            |
-| quote     | string | **No**   | Quote to show in Facebook card.   |
-| hashtag   | string | **No**   | Hashtag to show in Facebook card. |
+| quote     | string | No       | Quote to show in Facebook card.   |
+| hashtag   | string | No       | Hashtag to show in Facebook card. |
 
 Basic component example usage:
 
@@ -131,9 +131,9 @@ export default ShareToFacebook;
 | Parameter | Type   | Required | Notes                                                                 |
 | --------- | ------ | -------- | --------------------------------------------------------------------- |
 | url       | string | **Yes**  | URL of shared webpage.                                                |
-| title     | string | **No**   | Title to show in card.                                                |
-| summary   | string | **No**   | Description to show in card.                                          |
-| source    | string | **No**   | Source of the content. For example, your website or application name. |
+| title     | string | No       | Title to show in card.                                                |
+| summary   | string | No       | Description to show in card.                                          |
+| source    | string | No       | Source of the content. For example, your website or application name. |
 
 Basic component example usage:
 
@@ -154,9 +154,9 @@ export default ShareToLinkedin;
 | Parameter | Type                 | Required | Notes                                                                           |
 | --------- | -------------------- | -------- | ------------------------------------------------------------------------------- |
 | url       | string               | **Yes**  | URL of shared webpage.                                                          |
-| text      | string               | **No**   | Text to show in Twitter card.                                                   |
-| hashtags  | string&#124;string[] | **No**   | Hashtags to show in Twitter card. Example, `"your,tags"` or `["your", "tags"]`. |
-| related   | string&#124;string[] | **No**   | Accounts to recommend following. Example, `"your, tags"` or `["your", "tags"]`. |
+| text      | string               | No       | Text to show in Twitter card.                                                   |
+| hashtags  | string&#124;string[] | No       | Hashtags to show in Twitter card. Example, `"your,tags"` or `["your", "tags"]`. |
+| related   | string&#124;string[] | No       | Accounts to recommend following. Example, `"your, tags"` or `["your", "tags"]`. |
 
 Basic component example usage:
 
@@ -175,7 +175,7 @@ export default ShareToTwitter;
 | Parameter | Type   | Required | Notes                                                |
 | --------- | ------ | -------- | ---------------------------------------------------- |
 | url       | string | **Yes**  | URL of shared webpage.                               |
-| text      | string | **No**   | Text to show in the WhatsApp message before the URL. |
+| text      | string | No       | Text to show in the WhatsApp message before the URL. |
 
 Basic component example usage:
 
@@ -220,15 +220,15 @@ const Share = () => (
 export default Share;
 ```
 
-### getCurrentUrlAndCopyToClipboard()
+### copyToClipboard()
 
-Method used to copy current window URL and copy it into your clipboard.
+Method used to copy some given text and copy it into your clipboard.
 
 ```jsx
-import { getCurrentUrlAndCopyToClipboard } from "@phntms/react-share";
+import { copyToClipboard } from "@phntms/react-share";
 
 const Copy = () => (
-  <div onClick={() => getCurrentUrlAndCopyToClipboard()}>Copy</div>
+  <div onClick={() => copyToClipboard("https://phantom.land")}>Copy</div>
 );
 
 export default Copy;
