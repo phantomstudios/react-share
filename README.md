@@ -8,14 +8,13 @@ An all-in-one React library to implement custom Page Sharing Meta and Social Med
 
 ## Introduction
 
-Designed to use and extend [OpenGraph](https://ogp.me/) standards. Alongside, full sharing support to the following social media platforms:
+Designed to use and extend [OpenGraph](https://ogp.me/) standards, including built-in support for sharing with:
 
 - Facebook
 - Linkedin
 - Twitter
 - WhatsApp
-
-Including copy current url to clipboard support.
+- Copy to Clipboard
 
 ## Installation
 
@@ -222,7 +221,7 @@ export default Share;
 
 ### copyToClipboard()
 
-Method used to copy some given text and copy it into your clipboard.
+Method used to copy a given text into your clipboard.
 
 ```jsx
 import { copyToClipboard } from "@phntms/react-share";
