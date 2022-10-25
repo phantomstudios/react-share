@@ -108,7 +108,6 @@ Twitter will inherit `og:title`, `og:description` and `og:image` tags by default
 | Parameter | Type   | Required | Notes                             |
 | --------- | ------ | -------- | --------------------------------- |
 | url       | string | **Yes**  | URL of shared webpage.            |
-| quote     | string | No       | Quote to show in Facebook card.   |
 | hashtag   | string | No       | Hashtag to show in Facebook card. |
 
 Basic component example usage:
