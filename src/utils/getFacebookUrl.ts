@@ -1,5 +1,5 @@
-import { BaseShareProps } from "../types";
 import objectToUrlParams from "./objectToUrlParams";
+import { BaseShareProps } from "../types";
 
 export interface FacebookProps extends BaseShareProps {
   /** Quote to show in Facebook card. */
