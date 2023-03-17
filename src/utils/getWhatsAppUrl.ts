@@ -7,8 +7,10 @@ export interface WhatsAppProps extends BaseShareProps {
 }
 
 export const getWhatsAppUrl = ({ url, text }: WhatsAppProps) =>
-  `whatsapp://send?text=${objectToUrlParams({
+  `whatsapp://send${objectToUrlParams({
     text: text ? `${text} ${url}` : url,
   })}`;
 
 export default getWhatsAppUrl;
+
+console.log()
