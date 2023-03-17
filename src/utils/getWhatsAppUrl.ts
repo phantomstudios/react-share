@@ -12,5 +12,3 @@ export const getWhatsAppUrl = ({ url, text }: WhatsAppProps) =>
   })}`;
 
 export default getWhatsAppUrl;
-
-console.log()
