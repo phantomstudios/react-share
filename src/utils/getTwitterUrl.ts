@@ -1,6 +1,6 @@
+import objectToUrlParams from "./objectToUrlParams";
 import { BaseShareProps } from "../types";
 import { commaSeparate } from "../utils";
-import objectToUrlParams from "./objectToUrlParams";
 
 export interface TwitterProps extends BaseShareProps {
   /** Text to show in card. */

@@ -1,5 +1,5 @@
-import { BaseShareProps } from "../types";
 import objectToUrlParams from "./objectToUrlParams";
+import { BaseShareProps } from "../types";
 
 export interface LinkedinProps extends BaseShareProps {
   /** Title value to show in card. */

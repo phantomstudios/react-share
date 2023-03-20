@@ -1,8 +1,8 @@
-import { SocialPlatforms } from "../types";
 import getFacebookUrl, { FacebookProps } from "./getFacebookUrl";
 import getLinkedinUrl, { LinkedinProps } from "./getLinkedinUrl";
 import getTwitterUrl, { TwitterProps } from "./getTwitterUrl";
 import getWhatsAppUrl, { WhatsAppProps } from "./getWhatsAppUrl";
+import { SocialPlatforms } from "../types";
 
 export type AllSocialPlatformProps = FacebookProps &
   LinkedinProps &
