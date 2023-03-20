@@ -13,7 +13,6 @@ export const getShareUrl = (
   socialPlatform: SocialPlatforms,
   {
     url,
-    quote,
     hashtag,
     title,
     summary,
@@ -25,7 +24,7 @@ export const getShareUrl = (
 ) => {
   switch (socialPlatform) {
     case SocialPlatforms.Facebook:
-      return getFacebookUrl({ url, quote, hashtag });
+      return getFacebookUrl({ url, hashtag });
 
     case SocialPlatforms.Linkedin:
       return getLinkedinUrl({ url, title, summary, source });
