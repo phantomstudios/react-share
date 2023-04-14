@@ -1,11 +1,17 @@
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import { MetaHeadEmbed } from "@phntms/react-share";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
-      <main className={inter.className}>
+      <MetaHeadEmbed
+        render={(meta: React.ReactNode) => <Head>{meta}</Head>}
+        siteTitle="PHANTOM"
+        pageTitle="Test Subroute Meta"
+        description="subroute test"
+        baseSiteUrl={"test"}
+      />
+      <main>
         <h1>Subroute Example</h1>
       </main>
     </>
