@@ -1,0 +1,12 @@
+div.ButtonsWrapper, div.UtilExamplesWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+div.ButtonsWrapper {
+  gap: 1em;
+}
+
+div.UtilExamplesWrapper {
+  gap: 2em;
+}
