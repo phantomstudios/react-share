@@ -1,5 +1,5 @@
 {
-  "name": "@phntms/react-share",
+  "name": "@phantomstudios/react-share",
   "description": "An all-in-one React library to implement custom Sharing Meta and Social Media Sharing Buttons.",
   "version": "1.0.2-rc1",
   "main": "lib/index.js",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
-    "@types/react": "17.0.38",
+    "@types/react": "^18.2.75",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
     "babel-eslint": "^10.1.0",

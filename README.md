@@ -21,7 +21,7 @@ Designed to use and extend [OpenGraph](https://ogp.me/) standards, including bui
 Install this package with `npm`.
 
 ```bash
-npm i @phntms/react-share
+npm i @phantomstudios/react-share
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ Example usage in Next.js:
 
 ```JSX
 import Head from 'next/head';
-import { MetaHeadEmbed } from "@phntms/react-share";
+import { MetaHeadEmbed } from "@phantomstudios/react-share";
 
 const PageLayout: React.FC = ({children}) => {
   <>
@@ -113,7 +113,7 @@ Twitter will inherit `og:title`, `og:description` and `og:image` tags by default
 Basic component example usage:
 
 ```jsx
-import { getFacebookUrl } from "@phntms/react-share";
+import { getFacebookUrl } from "@phantomstudios/react-share";
 
 const ShareToFacebook = () => (
   <a href={getFacebookUrl({ url: "https://phantom.land/" })}>
@@ -136,7 +136,7 @@ export default ShareToFacebook;
 Basic component example usage:
 
 ```jsx
-import { getLinkedinUrl } from "@phntms/react-share";
+import { getLinkedinUrl } from "@phantomstudios/react-share";
 
 const ShareToLinkedin = () => (
   <a href={getLinkedinUrl({ url: "https://phantom.land/" })}>
@@ -159,7 +159,7 @@ export default ShareToLinkedin;
 Basic component example usage:
 
 ```jsx
-import { getTwitterUrl } from "@phntms/react-share";
+import { getTwitterUrl } from "@phantomstudios/react-share";
 
 const ShareToTwitter = () => (
   <a href={getTwitterUrl({ url: "https://phantom.land/" })}>Share to Twitter</a>
@@ -178,7 +178,7 @@ export default ShareToTwitter;
 Basic component example usage:
 
 ```jsx
-import { getWhatsAppUrl } from "@phntms/react-share";
+import { getWhatsAppUrl } from "@phantomstudios/react-share";
 
 const ShareToWhatsApp = () => (
   <a href={getWhatsAppUrl({ url: "https://phantom.land/" })}>
@@ -198,7 +198,7 @@ If you would rather have all share urls in one place, `getShareUrl()` can be use
 Example usage:
 
 ```jsx
-import { getShareUrl, SocialPlatforms } from "@phntms/react-share";
+import { getShareUrl, SocialPlatforms } from "@phantomstudios/react-share";
 
 const Share = () => (
   <a href={getShareUrl(SocialPlatforms.Facebook, {url: "https://phantom.land/" })}>
@@ -223,7 +223,7 @@ export default Share;
 Method used to copy a given text into your clipboard.
 
 ```jsx
-import { copyToClipboard } from "@phntms/react-share";
+import { copyToClipboard } from "@phantomstudios/react-share";
 
 const Copy = () => (
   <div onClick={() => copyToClipboard("https://phantom.land")}>Copy</div>
@@ -245,9 +245,9 @@ If a social media platform you want to use isn't already supported, or found an 
 
 Please read `CONTRIBUTING` for details on our `CODE_OF_CONDUCT`, and the process for submitting pull requests to us!
 
-[npm-image]: https://img.shields.io/npm/v/@phntms/react-share.svg?style=flat-square&logo=react
-[npm-url]: https://npmjs.org/package/@phntms/react-share
-[npm-downloads-image]: https://img.shields.io/npm/dm/@phntms/react-share.svg
-[npm-downloads-url]: https://npmcharts.com/compare/@phntms/react-share?minimal=true
+[npm-image]: https://img.shields.io/npm/v/@phantomstudios/react-share.svg?style=flat-square&logo=react
+[npm-url]: https://npmjs.org/package/@phantomstudios/react-share
+[npm-downloads-image]: https://img.shields.io/npm/dm/@phantomstudios/react-share.svg
+[npm-downloads-url]: https://npmcharts.com/compare/@phantomstudios/react-share?minimal=true
 [ci-image]: https://github.com/phantomstudios/react-share/workflows/test/badge.svg
 [ci-url]: https://github.com/phantomstudios/react-share/actions
