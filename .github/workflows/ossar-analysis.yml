@@ -18,6 +18,9 @@ jobs:
     # ubuntu-latest and macos-latest support coming soon
     runs-on: windows-latest
 
+    permissions:
+      contents: read
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
