@@ -38,5 +38,3 @@ In effect this means:
   history of the master branch and explain all the changes.
 - You ought to be able to find any previous version easily using GitHub tabs, or
   [Releases](https://github.com/phantomstudios/react-share/releases)
-
-Thanks, John Chipps-Harding

@@ -33,7 +33,7 @@
     "fix:format": "prettier \"**/*.{md,yml}\" --write",
     "depcheck": "npx npm-check --update"
   },
-  "author": "Paulo Ferreira Jorge (paulo.jorge@phntms.com)",
+  "author": "Josua Pedersen (josua@phantom.agency)",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=17.0.2",
