@@ -47,7 +47,7 @@ export interface TwitterEmbedProps {
 
 export interface MetaEmbedProps {
   /** Returns meta properties to be rendered. */
-  render: (meta: React.ReactNode) => JSX.Element;
+  render: (meta: React.ReactNode) => React.JSX.Element;
 
   /** Unique page title that describes the page, such as `Home`, `About` etc. */
   pageTitle?: string;
