@@ -7,7 +7,7 @@ export default function objectToUrlParams(data: UrlDataProps) {
     .filter(([, value]) => value)
     .map(
       ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`
+        `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`,
     );
   return params.length ? `?${params.join("&")}` : "";
 }
