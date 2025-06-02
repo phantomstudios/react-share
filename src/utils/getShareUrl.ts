@@ -20,7 +20,7 @@ export const getShareUrl = (
     text,
     hashtags,
     related,
-  }: AllSocialPlatformProps
+  }: AllSocialPlatformProps,
 ) => {
   switch (socialPlatform) {
     case SocialPlatforms.Facebook:
